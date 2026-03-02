@@ -1,4 +1,3 @@
-import React from "react";
 import { Carousel } from "antd";
 
 import image1 from "../../assets/divisions/image1.png";
@@ -11,30 +10,29 @@ const divisionsData = [
     id: 1,
     title: "Observation and\nCamping Division",
     image: image1,
-    link: "#",
+    link: "/about#observation",
   },
   {
     id: 2,
     title: "Data Analysis and\nSoftware Division",
     image: image2,
-    link: "#",
+    link: "/about#data-analysis",
   },
   {
     id: 3,
     title: "Robotics and\nRover Division",
     image: image3,
-    link: "#",
+    link: "/about#robotics",
   },
   {
     id: 4,
     title: "Biotechnical\nDivision",
     image: image4,
-    link: "#",
+    link: "/about#biotechnical",
   },
 ];
 
 const Divisions = () => {
-  // Carousel settings for smooth, infinite linear scrolling
   const carouselSettings = {
     autoplay: true,
     autoplaySpeed: 0,
@@ -48,32 +46,30 @@ const Divisions = () => {
     responsive: [
       {
         breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-        },
+        settings: { slidesToShow: 3 },
       },
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
     ],
   };
 
   return (
-    <section className="relative z-20 py-20 px-6 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden">
+    <section className="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 bg-transparent snap-start overflow-hidden">
+      {/* Purple ambient glow */}
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-purple-600/8 rounded-full filter blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-purple-500/5 rounded-full filter blur-[120px] pointer-events-none" />
+
       <div className="container mx-auto max-w-6xl flex flex-col items-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none text-center">
+        <h2 className="text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none text-center animate-fade-in-up">
           OUR DIVISIONS
         </h2>
-        <p className="text-gray-300 text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center">
+        <p className="text-gray-300 text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
           Explore our specialized divisions driving innovation and research in
           space exploration.
         </p>
@@ -91,11 +87,10 @@ const Divisions = () => {
                   backgroundPosition: "center",
                 }}
               >
-                {/* Gradient overlay to ensure text readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none group-hover:from-black/40 group-hover:to-black/60 transition-colors duration-300"></div>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 pointer-events-none group-hover:from-black/40 group-hover:to-black/60 transition-colors duration-300" />
 
                 <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
-                  {/* Title (Top-left) */}
                   <h3
                     className="text-2xl sm:text-2xl text-white font-light tracking-wide whitespace-pre-line leading-tight"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}
@@ -103,7 +98,6 @@ const Divisions = () => {
                     {division.title}
                   </h3>
 
-                  {/* Read More Button (Bottom-left) */}
                   <div className="mt-auto">
                     <a
                       href={division.link}

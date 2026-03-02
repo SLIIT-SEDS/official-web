@@ -79,11 +79,9 @@
 .bg-glow::before {
   width: 600px;
   height: 600px;
-  background: linear-gradient(
-    180deg,
-    rgba(224, 182, 228, 0.4),
-    rgba(112, 91, 114, 0.4)
-  );
+  background: linear-gradient(180deg,
+      rgba(168, 85, 247, 0.35),
+      rgba(126, 58, 210, 0.25));
   top: 20%;
   right: -200px;
 }
@@ -91,13 +89,16 @@
 .bg-glow::after {
   width: 800px;
   height: 800px;
-  background: linear-gradient(
-    180deg,
-    rgba(224, 182, 228, 0.3),
-    rgba(127, 106, 129, 0.3)
-  );
+  background: linear-gradient(180deg,
+      rgba(147, 51, 234, 0.2),
+      rgba(88, 28, 135, 0.2));
   bottom: -200px;
   left: -200px;
+}
+
+/* Purple accent glow for text */
+.text-glow-purple {
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.5), 0 0 60px rgba(147, 51, 234, 0.25);
 }
 
 /* Navbar */
@@ -136,8 +137,15 @@
 
 /* Star particles */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .star {
@@ -152,12 +160,97 @@
 
 /* Orbiting dot around button */
 @keyframes orbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Shimmer sweep across button */
 @keyframes shimmer {
-  0%, 100% { transform: translateX(-100%); opacity: 0; }
-  50% { transform: translateX(100%); opacity: 1; }
+
+  0%,
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+
+/* Slide-in animations for split hands */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+
+/* Fade-in-up animation for text elements */
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Floating animation for astronaut */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
