@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import ContactPage from "./pages/Contact/ContactPage"
+
 import AboutUs from "./pages/AboutUs";
 import ComingSoon from "./pages/ComingSoon";
 import Navbar from "./components/layout/Navbar";
