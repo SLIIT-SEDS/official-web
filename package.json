@@ -1,6 +1,7 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "official-website",
   "private": true,
+  "description": "The official website for SEDS SLIIT chapter, built with React, Vite, and Tailwind CSS.",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

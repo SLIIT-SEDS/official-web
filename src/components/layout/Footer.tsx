@@ -8,7 +8,7 @@ import {
   MapPin,
   Twitter,
 } from "lucide-react";
-import logo from "../assets/seds-logo.png";
+import logo from "../../assets/seds-logo.png";
 
 const Footer = () => {
   return (

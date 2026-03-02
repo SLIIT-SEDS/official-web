@@ -1,1 +1,107 @@
-SEDS SLIIT
+# 🌌 SEDS SLIIT - Official Website
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+
+Welcome to the official repository of **SEDS SLIIT** (Students for the Exploration and Development of Space, SLIIT Chapter). This project is a modern, high-performance web application designed to showcase our missions, divisions, and passion for space exploration.
+
+---
+
+## ✨ Features
+
+- **🌌 Interactive Space Experience**: Immersive dark-themed UI with dynamic parallax star backgrounds and cosmic animations.
+- **🚀 Mission Driven**: Dedicated sections for our specialized divisions: Observation & Camping, Data Analysis, Robotics, and Biotechnology.
+- **📱 Fully Responsive**: Optimized for all devices, from desktop monitors to mobile screens.
+- **⚡ Performance First**: Built with Vite and React for lightning-fast load times and smooth transitions.
+- **🎨 Modern Aesthetics**: Utilizing Shadcn UI and Framer Motion for a premium, state-of-the-art feel.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix UI)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router](https://reactrouter.com/)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [bun](https://bun.sh/)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/SLIIT-SEDS/seds-sliit.git
+   cd seds-sliit
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   # or
+   bun dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Whether you're fixing a bug, adding a feature, or improving documentation, please follow our guidelines.
+
+Refer to [**BEST_PRACTICES.md**](./BEST_PRACTICES.md) for our:
+
+- 📂 Folder Structure
+- 🌿 Branching Strategy
+- 💬 Commit Message Formats
+
+### How to contribute:
+
+1. Fork the project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'feat: add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🔭 Contact & Socials
+
+- **Website**: [sedssliit.com](http://sedssliit.com)
+- **Email**: [info@sedssliit.com](mailto:info@sedssliit.com)
+- **Socials**: [Facebook](https://facebook.com) | [Instagram](https://instagram.com) | [LinkedIn](https://linkedin.com) | [Twitter](https://twitter.com)
+
+---
+
+Developed with ❤️ by **SEDS SLIIT**
