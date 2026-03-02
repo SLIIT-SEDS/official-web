@@ -16,7 +16,7 @@ const ComingSoon = ({ title }: ComingSoonProps) => {
                 <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-purple-500/8 rounded-full filter blur-[100px] pointer-events-none" />
 
                 {/* Astronaut image — visible on ALL screens including mobile */}
-                <div className="relative w-[250px] sm:w-[320px] md:w-[400px] lg:w-[450px] mb-8">
+                <div className="relative w-[250px] sm:w-[320px] md:w-[400px] lg:w-[450px] mb-8 -translate-x-6 sm:-translate-x-8 md:-translate-x-12">
                     <img
                         src={astronomyImg}
                         alt="Astronaut"

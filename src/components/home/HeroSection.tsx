@@ -10,8 +10,8 @@ const HeroSection = () => {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-700/10 rounded-full filter blur-[120px] pointer-events-none" />
 
       {/* Astronaut Image — background on all screens */}
-      <div className="absolute inset-0 flex items-center justify-end pointer-events-none overflow-hidden">
-        <div className="opacity-15 md:opacity-20 lg:opacity-70 w-[800px] lg:w-[900px] xl:w-[1100px] mr-[-5%] lg:mr-0">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div className="opacity-15 md:opacity-20 lg:opacity-70 w-[800px] lg:w-[900px] xl:w-[1100px] translate-x-[-10%] lg:translate-x-[15%]">
           <img
             src={astronomyImg}
             alt="Astronaut Background"
