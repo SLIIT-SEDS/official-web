@@ -187,7 +187,7 @@
 /* Slide-in animations for split hands */
 @keyframes slideInLeft {
   from {
-    transform: translateX(-80px);
+    transform: translateX(-60vw);
     opacity: 0;
   }
 
@@ -199,7 +199,7 @@
 
 @keyframes slideInRight {
   from {
-    transform: translateX(80px);
+    transform: translateX(60vw);
     opacity: 0;
   }
 
@@ -210,11 +210,11 @@
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideInLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  animation: slideInRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
 }
 

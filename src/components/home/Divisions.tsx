@@ -69,10 +69,6 @@ const Divisions = () => {
         <h2 className="text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none text-center animate-fade-in-up">
           OUR DIVISIONS
         </h2>
-        <p className="text-gray-300 text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-          Explore our specialized divisions driving innovation and research in
-          space exploration.
-        </p>
       </div>
 
       <div className="w-full max-w-[1600px] mx-auto pb-10">
