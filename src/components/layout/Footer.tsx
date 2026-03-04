@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import {
   Facebook,
   Instagram,
@@ -7,8 +7,8 @@ import {
   Phone,
   MapPin,
   Twitter,
-} from "lucide-react";
-import logo from "../../assets/seds-logo.png";
+} from 'lucide-react';
+import logo from '../../assets/seds-logo.png';
 
 const Footer = () => {
   return (

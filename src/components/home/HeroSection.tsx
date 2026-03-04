@@ -1,5 +1,5 @@
-import astronomyImg from "../../assets/astronomy.png";
-import Button from "../ui/Button";
+import astronomyImg from '../../assets/astronomy.png';
+import Button from '../ui/Button';
 
 const HeroSection = () => {
   return (
@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 md:gap-6 z-20 md:col-span-12 lg:col-span-8">
           <h1
             className="text-glow font-light tracking-wider text-white whitespace-nowrap leading-none w-full"
-            style={{ fontSize: "clamp(2.5rem, 8vw, 7.5rem)" }}
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 7.5rem)' }}
           >
             SEDS SLIIT
           </h1>

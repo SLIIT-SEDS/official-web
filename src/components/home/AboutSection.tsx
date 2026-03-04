@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import Button from '../ui/Button';
 
 const AboutSection = () => {
   return (
@@ -12,7 +12,7 @@ const AboutSection = () => {
           <p className="text-gray-300 text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center">
             SEDS SLIIT is a student-led organization advancing space exploration
             and <br className="hidden lg:block" />
-            development at Sri Lanka Institute of Information Technology.{" "}
+            development at Sri Lanka Institute of Information Technology.{' '}
             <br className="hidden lg:block" />
             As an official chapter of Students for the Exploration and
             Development of Space, <br className="hidden lg:block" />

@@ -69,7 +69,7 @@
 /* Background Glow */
 .bg-glow::before,
 .bg-glow::after {
-  content: "";
+  content: '';
   position: fixed;
   border-radius: 50%;
   filter: blur(180px);
@@ -131,13 +131,20 @@
 
 /* Glow text effect */
 .text-glow {
-  text-shadow: 0 0 20px hsl(270 60% 70% / 0.4), 0 0 40px hsl(270 60% 70% / 0.2);
+  text-shadow:
+    0 0 20px hsl(270 60% 70% / 0.4),
+    0 0 40px hsl(270 60% 70% / 0.2);
 }
 
 /* Star particles */
 @keyframes twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .star {
@@ -152,12 +159,23 @@
 
 /* Orbiting dot around button */
 @keyframes orbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Shimmer sweep across button */
 @keyframes shimmer {
-  0%, 100% { transform: translateX(-100%); opacity: 0; }
-  50% { transform: translateX(100%); opacity: 1; }
+  0%,
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
 }
