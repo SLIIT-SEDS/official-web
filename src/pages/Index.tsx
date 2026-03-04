@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import Landing from "../components/landing";
+import Landing from "../components/landingPage";
 
 const GlobalStars = () => {
   const stars = useMemo(
