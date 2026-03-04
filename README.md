@@ -74,17 +74,30 @@ Welcome to the official repository of **SEDS SLIIT** (Students for the Explorati
 
 We welcome contributions from the community! Whether you're fixing a bug, adding a feature, or improving documentation, please follow our guidelines.
 
-Refer to [**BEST_PRACTICES.md**](./BEST_PRACTICES.md) for our:
+Refer to [**CONTRIBUTING.md**](./CONTRIBUTING.md) for detailed instructions on:
 
-- 📂 Folder Structure
+- 🚀 Getting Started
 - 🌿 Branching Strategy
-- 💬 Commit Message Formats
+- 💬 Git Commit Best Practices
+- 📥 Pull Request Guidelines
 
-### How to contribute:
+---
+
+## 📚 Project Documentation
+
+For a deeper understanding of our codebase and development workflow, please check out the following guides:
+
+- 📂 [**Project Folder Structure**](./docs/FOLDER_STRUCTURE.md) - How we organize our code.
+- 🛠️ [**Development & Tooling Guide**](./docs/DEVELOPMENT_GUIDE.md) - Technical details on linting, formatting, testing, and CI/CD.
+- 🎨 [**Premium Aesthetics**](./CONTRIBUTING.md#professional-aesthetics) - Our visual and design standards.
+
+---
+
+### Quick Start:
 
 1. Fork the project.
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'feat: add some AmazingFeature'`).
+3. Commit your changes following the [Conventional Commits](https://www.conventionalcommits.org/) format.
 4. Push to the Branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
 
