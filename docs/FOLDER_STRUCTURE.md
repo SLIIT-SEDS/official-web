@@ -18,7 +18,6 @@ All source code lives inside the `src/` directory.
   - _Example: `Index.tsx`, `About.tsx`_
 - **`src/lib/`** or **`src/utils/`**: Helper functions, constants, and utilities that don't belong in a specific component.
 - **`src/hooks/`**: Custom React hooks.
-- **`src/test/`**: Unit and integration tests.
 - **`src/` (root)**: Core configuration files (`App.tsx`, `main.tsx`, `index.css`).
 
 ---

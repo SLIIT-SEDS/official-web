@@ -11,11 +11,11 @@ To ensure a smooth and productive collaboration, please follow these guidelines.
 1. **Fork the repository** on GitHub.
 2. **Clone your fork** to your local machine:
    ```bash
-   git clone https://github.com/SLIIT-SEDS/seds-sliit.git
+   git clone https://github.com/SLIIT-SEDS/official-web.git
    ```
 3. **Set the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/SLIIT-SEDS/seds-sliit.git
+   git remote add upstream https://github.com/SLIIT-SEDS/official-web.git
    ```
 4. **Install dependencies**:
    ```bash
@@ -59,6 +59,7 @@ We use the **Conventional Commits** specification. This helps in maintaining a r
 - **`style`**: Formatting, missing semi-colons, etc; no production code change.
 - **`refactor`**: Refactoring production code, e.g. renaming a variable.
 - **`chore`**: Updating dependencies, build tasks, etc; no production code change.
+- **`test`**: Adding missing tests or correcting existing tests.
 
 ### Example
 
@@ -71,7 +72,24 @@ git commit -m "feat(navbar): implement mobile responsive menu"
 - **Use imperative mood**: "add feature" NOT "added feature" or "adds feature".
 - **Lowercase first letter**: Start the subject line with a lowercase letter.
 - **Keep it concise**: Limit the subject line to 50-72 characters.
-- **Include Body**: If more detail is needed, add a blank line after the subject followed by the body.
+
+---
+
+## 🛠️ Development & Quality Assurance
+
+### Formatting & Linting
+We use **Prettier** for formatting and **ESLint** for linting. Please ensure your code follows our style before submitting a PR.
+
+```bash
+# Check formatting
+npm run format:check
+
+# Fix formatting automatically
+npm run format:fix
+
+# Run linting
+npm run lint
+```
 
 ---
 
@@ -92,10 +110,9 @@ git commit -m "feat(navbar): implement mobile responsive menu"
 ### What Makes a Great PR?
 
 - It addresses a single issue or feature.
-- It includes relevant tests if applicable.
-- **It is formatted using Prettier.** Run `npm run format:check` to check or `npm run format:fix` to automatically fix formatting.
+- It is formatted and linted properly.
 - It follows the project’s style guide.
-- It provides a clear description of the "why" behind the changes.
+- It provides a clear description of the "why" behind any significant changes.
 
 ---
 
@@ -103,11 +120,11 @@ git commit -m "feat(navbar): implement mobile responsive menu"
 
 This project values visual excellence. If you are contributing UI/UX changes, ensure they:
 
-- Use our established color palette and typography.
-- Are fully responsive.
-- Include smooth transitions and micro-animations where appropriate.
+- Use our established color palette and typography (see `src/index.css`).
+- Are fully responsive across all screen sizes.
+- Include smooth transitions and micro-animations (e.g., using Framer Motion).
 - Adhere to the project's design patterns.
 
 ---
 
-Thank you for contributing! If you have any questions, feel free to open an issue.
+Thank you for contributing! If you have any questions, feel free to open an issue or contact us.

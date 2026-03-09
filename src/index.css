@@ -59,10 +59,23 @@
     font-family: 'Rajdhani', sans-serif;
     color: white;
     overflow-x: hidden;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  body::-webkit-scrollbar,
+  html::-webkit-scrollbar {
+    display: none;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
@@ -79,11 +92,9 @@
 .bg-glow::before {
   width: 600px;
   height: 600px;
-  background: linear-gradient(
-    180deg,
-    rgba(224, 182, 228, 0.4),
-    rgba(112, 91, 114, 0.4)
-  );
+  background: linear-gradient(180deg,
+      rgba(224, 182, 228, 0.4),
+      rgba(112, 91, 114, 0.4));
   top: 20%;
   right: -200px;
 }
@@ -91,11 +102,9 @@
 .bg-glow::after {
   width: 800px;
   height: 800px;
-  background: linear-gradient(
-    180deg,
-    rgba(224, 182, 228, 0.3),
-    rgba(127, 106, 129, 0.3)
-  );
+  background: linear-gradient(180deg,
+      rgba(224, 182, 228, 0.3),
+      rgba(127, 106, 129, 0.3));
   bottom: -200px;
   left: -200px;
 }
@@ -138,10 +147,12 @@
 
 /* Star particles */
 @keyframes twinkle {
+
   0%,
   100% {
     opacity: 0.2;
   }
+
   50% {
     opacity: 1;
   }
@@ -162,6 +173,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -169,11 +181,13 @@
 
 /* Shimmer sweep across button */
 @keyframes shimmer {
+
   0%,
   100% {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   50% {
     transform: translateX(100%);
     opacity: 1;

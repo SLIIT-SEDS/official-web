@@ -24,9 +24,11 @@ Welcome to the official repository of **SEDS SLIIT** (Students for the Explorati
 - **Core**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix UI)
+- **UI Components**: [Shadcn UI](https://ui.shadcn.com/) (Radix UI) + [Ant Design](https://ant.design/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management**: [TanStack Query](https://tanstack.com/query/latest)
+- **Forms**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
 - **Routing**: [React Router](https://reactrouter.com/)
 
 ---
@@ -43,8 +45,8 @@ Welcome to the official repository of **SEDS SLIIT** (Students for the Explorati
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/SLIIT-SEDS/seds-sliit.git
-   cd seds-sliit
+   git clone https://github.com/SLIIT-SEDS/official-web.git
+   cd official-web
    ```
 
 2. **Install dependencies:**
@@ -80,6 +82,7 @@ Refer to [**CONTRIBUTING.md**](./CONTRIBUTING.md) for detailed instructions on:
 - 🌿 Branching Strategy
 - 💬 Git Commit Best Practices
 - 📥 Pull Request Guidelines
+- 🎨 [Premium Aesthetics](./CONTRIBUTING.md#professional-aesthetics)
 
 ---
 
@@ -89,17 +92,6 @@ For a deeper understanding of our codebase and development workflow, please chec
 
 - 📂 [**Project Folder Structure**](./docs/FOLDER_STRUCTURE.md) - How we organize our code.
 - 🛠️ [**Development & Tooling Guide**](./docs/DEVELOPMENT_GUIDE.md) - Technical details on linting, formatting, testing, and CI/CD.
-- 🎨 [**Premium Aesthetics**](./CONTRIBUTING.md#professional-aesthetics) - Our visual and design standards.
-
----
-
-### Quick Start:
-
-1. Fork the project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes following the [Conventional Commits](https://www.conventionalcommits.org/) format.
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
 
 ---
 
@@ -113,7 +105,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - **Website**: [sedssliit.com](http://sedssliit.com)
 - **Email**: [info@sedssliit.com](mailto:info@sedssliit.com)
-- **Socials**: [Facebook](https://facebook.com) | [Instagram](https://instagram.com) | [LinkedIn](https://linkedin.com) | [Twitter](https://twitter.com)
+- **Socials**: [LinkedIn](https://linkedin.com/company/seds-sliit) | [Instagram](https://instagram.com/seds_sliit) | [Facebook](https://facebook.com/sedssliit)
 
 ---
 

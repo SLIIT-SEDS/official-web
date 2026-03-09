@@ -25,17 +25,6 @@ All code should be formatted using Prettier. This happens automatically on every
 
 ---
 
-## 🧪 Testing
-
-We use **Vitest** for unit and component testing.
-
-- **Run all tests**: `npm run test`
-- **Run tests in watch mode**: `npm run test:watch`
-
-Tests live inside the `src/test/` directory. For more details, consult the testing instructions in the component-specific folders.
-
----
-
 ## 🚀 CI/CD & Automation
 
 We have automated checks in place via **GitHub Actions** to ensure only quality code is merged.
