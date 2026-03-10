@@ -36,6 +36,11 @@
 
     --radius: 0.5rem;
 
+    --navbar-accent: #E0B6E4;
+    --navbar-secondary: #7F6A81;
+    --navbar-mid: #705B72;
+    --navbar-dark: #000000;
+
     --sidebar-background: 240 10% 6%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 270 60% 70%;
@@ -110,17 +115,46 @@
 }
 
 /* Navbar */
-.navbar {
+.navbar-pill {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(112, 91, 114, 0.4) 100%);
+  border: 1px solid rgba(224, 182, 228, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 25px 60px;
+  gap: 2.5rem;
 }
 
-.navbar nav {
+.active-indicator {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
 }
+
+.nav-link {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  color: var(--navbar-accent);
+}
+
+.indicator-icon {
+  color: var(--navbar-accent);
+  filter: drop-shadow(0 0 5px var(--navbar-accent));
+}
+
+
 
 .navbar a {
   text-decoration: none;
