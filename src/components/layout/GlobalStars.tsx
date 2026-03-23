@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 const GlobalStars = () => {
   const stars = useMemo(
@@ -12,7 +12,7 @@ const GlobalStars = () => {
         size: Math.random() > 0.85 ? 3 : Math.random() > 0.5 ? 2 : 1,
         opacity: 0.15 + Math.random() * 0.35,
       })),
-    [],
+    []
   );
 
   return (

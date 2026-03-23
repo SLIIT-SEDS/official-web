@@ -1,35 +1,35 @@
-import React from "react";
-import { Carousel } from "antd";
+import React from 'react';
+import { Carousel } from 'antd';
 
-import image1 from "../../assets/divisions/image1.png";
-import image2 from "../../assets/divisions/image2.png";
-import image3 from "../../assets/divisions/image3.png";
-import image4 from "../../assets/divisions/image4.png";
+import image1 from '../../assets/divisions/image1.png';
+import image2 from '../../assets/divisions/image2.png';
+import image3 from '../../assets/divisions/image3.png';
+import image4 from '../../assets/divisions/image4.png';
 
 const divisionsData = [
   {
     id: 1,
-    title: "Observation and\nCamping Division",
+    title: 'Observation and\nCamping Division',
     image: image1,
-    link: "#",
+    link: '#',
   },
   {
     id: 2,
-    title: "Data Analysis and\nSoftware Division",
+    title: 'Data Analysis and\nSoftware Division',
     image: image2,
-    link: "#",
+    link: '#',
   },
   {
     id: 3,
-    title: "Robotics and\nRover Division",
+    title: 'Robotics and\nRover Division',
     image: image3,
-    link: "#",
+    link: '#',
   },
   {
     id: 4,
-    title: "Biotechnical\nDivision",
+    title: 'Biotechnical\nDivision',
     image: image4,
-    link: "#",
+    link: '#',
   },
 ];
 
@@ -39,7 +39,7 @@ const Divisions = () => {
     autoplay: true,
     autoplaySpeed: 0,
     speed: 6000,
-    cssEase: "linear",
+    cssEase: 'linear',
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -87,8 +87,8 @@ const Divisions = () => {
                 className="relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] max-h-[450px] rounded-[2rem] overflow-hidden group border border-white/10 mx-auto transition-transform hover:-translate-y-2 duration-300 backdrop-blur-md"
                 style={{
                   backgroundImage: `url(${division.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
                 {/* Gradient overlay to ensure text readability */}
