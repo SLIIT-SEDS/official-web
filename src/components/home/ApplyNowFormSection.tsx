@@ -4,6 +4,18 @@ const ApplyNowFormSection = () => {
   return (
     <section className="relative w-full py-24 px-6 flex flex-col items-center justify-center overflow-hidden">
       <div className="relative z-10 w-full max-w-screen-xl mx-auto flex flex-col items-center">
+        {/* Heading */}
+        <motion.h2
+          className="mb-16 text-center font-light tracking-wider bg-gradient-to-r from-white to-[#E0B6E4] bg-clip-text text-transparent select-none"
+          style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          READY TO EXPLORE SPACE?
+        </motion.h2>
+
         {/* Form Card */}
         <motion.div
           className="w-full max-w-[500px] bg-[#0f0b14]/60 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-md"

@@ -42,20 +42,7 @@ const CallToAction = () => {
         />
       </motion.div>
 
-      {/* Content Container - For centered heading and card */}
-      <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 flex flex-col items-center">
-        {/* Heading - Now below the image */}
-        <motion.h2
-          className="mt-8 mb-16 text-center font-light tracking-wider bg-gradient-to-r from-white to-[#E0B6E4] bg-clip-text text-transparent select-none"
-          style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          READY TO EXPLORE SPACE?
-        </motion.h2>
-      </div>
+
     </section>
   );
 };
