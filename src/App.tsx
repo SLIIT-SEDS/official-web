@@ -5,12 +5,14 @@ import ContactPage from './pages/Contact/ContactPage';
 import AboutPage from './components/AboutPage';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import SmoothScroll from './components/layout/SmoothScroll';
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
+      <SmoothScroll />
       <Navbar />
       <Routes>
         <Route path="/" element={<Index />} />
