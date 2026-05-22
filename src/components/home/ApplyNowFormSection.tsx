@@ -24,11 +24,11 @@ const ApplyNowFormSection = () => {
       { opacity: 0, y: 35, filter: 'blur(5px)' },
       { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power3.out' }
     )
-    .fromTo(formCardRef.current,
-      { opacity: 0, y: 50, scale: 0.96 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.2)' },
-      '-=0.4'
-    );
+      .fromTo(formCardRef.current,
+        { opacity: 0, y: 50, scale: 0.96 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.2)' },
+        '-=0.4'
+      );
 
     // 2. Slow Ambient Floating Motion for Nebula Glow
     gsap.to(nebulaRef.current, {
@@ -53,17 +53,17 @@ const ApplyNowFormSection = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      className="relative w-full py-28 px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent"
+      className="relative w-full py-28 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Background Animated Nebulas */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
-        <div 
+        <div
           ref={nebulaRef}
           className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#E0B6E4]/30 to-transparent blur-[100px] mix-blend-screen"
         />
-        <div 
+        <div
           className="nebula-glow-2 absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-l from-primary/20 to-transparent blur-[120px] mix-blend-screen"
         />
       </div>
@@ -81,7 +81,7 @@ const ApplyNowFormSection = () => {
         {/* Form Card */}
         <div
           ref={formCardRef}
-          className="w-full max-w-[500px] bg-[#0f0b14]/50 border border-white/5 rounded-[2.5rem] p-10 md:p-12 backdrop-blur-md relative overflow-hidden opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/10 transition-colors duration-500"
+          className="w-full max-w-[500px] bg-[#0f0b14]/50 border border-white/5 rounded-[2.5rem] p-5 sm:p-10 md:p-12 backdrop-blur-md relative overflow-hidden opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/10 transition-colors duration-500"
         >
           {/* Top light beam accent */}
           <div className="absolute top-0 inset-x-10 h-[1px] bg-gradient-to-r from-transparent via-[#E0B6E4]/40 to-transparent" />

@@ -7,15 +7,15 @@ import logo from "../../assets/seds-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative z-20 bg-[#090709] pt-20 pb-10 px-6 md:px-12 lg:px-20 overflow-hidden font-sans">
+    <footer className="relative z-20 bg-[#090709] pt-20 pb-10 px-4 sm:px-8 md:px-12 lg:px-20 overflow-hidden font-sans">
       {/* Background Glow Effect */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none"></div>
 
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_0.7fr_0.7fr_1fr] gap-12 mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_0.7fr_0.7fr_1fr] gap-12 mb-16 items-start text-center md:text-left">
 
           {/* Logo & Description */}
-          <div className="flex items-start gap-6 lg:-ml-4">
+          <div className="flex flex-col items-center md:items-start md:flex-row gap-4 sm:gap-6 lg:-ml-4">
             <Link to="/" className="shrink-0 -mt-1">
               <img
                 src={logo}
@@ -23,18 +23,15 @@ const Footer = () => {
                 style={{ width: "78px", height: "78px", borderRadius: "39px" }}
               />
             </Link>
-            <div className="flex flex-col gap-4">
-              <p className="text-[#d4d0d8] font-semibold text-[15px] leading-[1.3] tracking-normal">
-                Welcome to SEDS SLIIT a student-led space organization<br />
-                at Sri Lanka institute of Information Technology,<br />
-                empovering students to explore,build and innovate<br />
-                beyond the classroom
+            <div className="flex flex-col gap-4 items-center md:items-start">
+              <p className="text-[#d4d0d8] font-semibold text-[15px] leading-relaxed tracking-normal max-w-md">
+                Welcome to SEDS SLIIT a student-led space organization at Sri Lanka Institute of Information Technology, empowering students to explore, build, and innovate beyond the classroom.
               </p>
-              <div className="mt-20">
+              <div className="mt-8 sm:mt-12 md:mt-16">
                 <h4 className="text-[#e5e1e8] font-normal text-2xl tracking-tight mb-5">
                   Follow Us on Socials!
                 </h4>
-                <div className="flex gap-6 items-center">
+                <div className="flex gap-6 items-center justify-center md:justify-start">
                   <a
                     href="https://twitter.com"
                     target="_blank"
@@ -73,12 +70,12 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:pl-12">
+          <div className="lg:pl-12 flex flex-col items-center md:items-start">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Links
             </h4>
             <ul className="flex flex-col gap-2.5 mt-1">
-              <li className="h-[19px] w-[35px]">
+              <li>
                 <Link
                   to="/"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -86,7 +83,7 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li className="h-[19px] w-[36px]">
+              <li>
                 <Link
                   to="/about"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -94,7 +91,7 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-              <li className="h-[19px] w-[33px]">
+              <li>
                 <Link
                   to="/blogs"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -102,7 +99,7 @@ const Footer = () => {
                   Blogs
                 </Link>
               </li>
-              <li className="h-[19px] w-[41px]">
+              <li>
                 <Link
                   to="/events"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -110,7 +107,7 @@ const Footer = () => {
                   Events
                 </Link>
               </li>
-              <li className="h-[19px] w-[36px]">
+              <li>
                 <Link
                   to="/board"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -118,7 +115,7 @@ const Footer = () => {
                   Board
                 </Link>
               </li>
-              <li className="h-[19px] w-[48px]">
+              <li>
                 <Link
                   to="/contact"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -130,7 +127,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Contact
             </h4>
@@ -142,7 +139,7 @@ const Footer = () => {
           </div>
 
           {/* Subscribe */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Subscribe
             </h4>

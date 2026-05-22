@@ -147,7 +147,7 @@ const Divisions = () => {
   };
 
   return (
-    <section className="divisions-section relative z-20 py-28 px-6 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden">
+    <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden">
       
       {/* Cyber space grid matrix background */}
       <div 
@@ -168,10 +168,10 @@ const Divisions = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-6xl flex flex-col items-center mb-20 relative z-10">
+      <div className="container mx-auto max-w-6xl flex flex-col items-center mb-10 md:mb-20 relative z-10">
         <h2 
           ref={titleRef}
-          className="text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none text-center"
+          className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none text-center"
         >
           OUR DIVISIONS
         </h2>
@@ -184,17 +184,69 @@ const Divisions = () => {
         </p>
       </div>
 
-      {/* Carousel list of Divisions with Neon border draws */}
-      <div className="w-full max-w-[1600px] mx-auto pb-10 relative z-10">
+      {/* Mobile: vertical stack (one card per row) */}
+      <div className="block sm:hidden w-full max-w-lg mx-auto pb-10 relative z-10 flex flex-col gap-6 px-2">
+        {divisionsData.map((division) => (
+          <div key={division.id} className="w-full">
+            <div
+              className="division-glow-card relative rounded-[2rem] overflow-hidden group border border-white/5 w-full transition-all duration-500 backdrop-blur-md"
+              style={{
+                backgroundImage: `url(${division.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '420px',
+              }}
+            >
+              {/* Neon Path Drawing Overlay */}
+              <div className="absolute inset-0 rounded-[2rem] border border-[#E0B6E4]/0 group-hover:border-[#E0B6E4]/25 transition-all duration-500 pointer-events-none z-20">
+                <svg className="absolute inset-0 w-full h-full" fill="none">
+                  <rect
+                    x="1" y="1" width="99%" height="99%" rx="38" ry="38"
+                    stroke="url(#neonBorderGradient)"
+                    strokeWidth="2"
+                    className="neon-draw-rect"
+                  />
+                </svg>
+              </div>
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80 pointer-events-none z-10" />
+
+              <div className="absolute inset-0 p-6 flex flex-col justify-between" style={{ zIndex: 15 }}>
+                <h3
+                  className="text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight"
+                  style={{ fontFamily: "'Rajdhani', sans-serif" }}
+                >
+                  {division.title}
+                </h3>
+                <div className="mt-auto">
+                  <a
+                    href={division.link}
+                    className="inline-flex items-center justify-center px-7 py-2.5 bg-transparent text-gray-300 hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-base font-light tracking-wide"
+                    style={{ fontFamily: "'Rajdhani', sans-serif" }}
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop/Tablet: Carousel */}
+      <div className="hidden sm:block w-full max-w-[1600px] mx-auto pb-10 relative z-10">
         <Carousel {...carouselSettings} className="divisions-carousel">
           {divisionsData.map((division) => (
             <div key={division.id} className="px-3 py-6">
               <div
-                className="division-glow-card relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] max-h-[460px] rounded-[2.5rem] overflow-hidden group border border-white/5 mx-auto transition-all duration-500 backdrop-blur-md"
+                className="division-glow-card relative rounded-[2.5rem] overflow-hidden group border border-white/5 mx-auto transition-all duration-500 backdrop-blur-md"
                 style={{
                   backgroundImage: `url(${division.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
+                  minHeight: '420px',
+                  height: 'clamp(420px, 40vw, 520px)',
                 }}
               >
                 {/* Neon Path Drawing Overlay */}
@@ -209,23 +261,20 @@ const Divisions = () => {
                   </svg>
                 </div>
 
-                {/* Gradient overlay to ensure text readability */}
+                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80 pointer-events-none group-hover:from-black/35 group-hover:to-black/70 transition-colors duration-500 z-10" />
 
-                <div className="absolute inset-0 p-10 flex flex-col justify-between z-15">
-                  {/* Title (Top-left) */}
+                <div className="absolute inset-0 p-10 flex flex-col justify-between" style={{ zIndex: 15 }}>
                   <h3
-                    className="text-2xl sm:text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight group-hover:text-glow transition-all duration-500"
+                    className="text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight group-hover:text-glow transition-all duration-500"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}
                   >
                     {division.title}
                   </h3>
-
-                  {/* Read More Button (Bottom-left) */}
                   <div className="mt-auto">
                     <a
                       href={division.link}
-                      className="inline-flex items-center justify-center px-7 py-2.5 bg-transparent text-gray-300 hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-base md:text-lg font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+                      className="inline-flex items-center justify-center px-7 py-2.5 bg-transparent text-gray-300 hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-lg font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
                       style={{ fontFamily: "'Rajdhani', sans-serif" }}
                     >
                       Read More

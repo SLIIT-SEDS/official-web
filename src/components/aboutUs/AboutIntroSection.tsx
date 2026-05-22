@@ -3,13 +3,13 @@ import planets from "../../assets/globals.svg";
 
 const AboutIntroSection: React.FC = () => {
   return (
-    <section id="about" className="w-full py-32 px-6 md:px-20">
+    <section id="about" className="w-full py-32 px-4 sm:px-10 md:px-20">
       <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-6 items-start relative">
 
         {/* LEFT COLUMN */}
         <div className="max-w-xl z-10">
           <h2
-            className="text-5xl md:text-6xl font-light text-white mb-6 tracking-widest leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-6 tracking-widest leading-tight"
             style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
           >
             ABOUT US
@@ -26,13 +26,13 @@ const AboutIntroSection: React.FC = () => {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="relative flex justify-end">
+        <div className="relative flex justify-center md:justify-end w-full min-h-[260px] md:min-h-0">
           <img
             src={planets}
             alt="planet stack"
             className="
-              w-[280px] md:w-[420px] object-contain
-              absolute md:top-[-120px] md:right-20 md:scale-100
+              w-[240px] md:w-[420px] object-contain
+              relative md:absolute md:top-[-120px] md:right-20 md:scale-100
               drop-shadow-[0_0_80px_rgba(255,255,255,0.15)]
             "
           />
