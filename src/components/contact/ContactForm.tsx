@@ -4,53 +4,77 @@ const ContactForm = () => {
   return (
     <div
       className="
-                flex
-                flex-col
-                items-center
-                p-2
-                mr-32
-            "
+        w-full
+        max-w-[500px]
+        mx-auto
+        bg-[#0f0b14]/50
+        border
+        border-white/5
+        rounded-[2.5rem]
+        p-6
+        sm:p-10
+        backdrop-blur-md
+        relative
+        overflow-hidden
+        shadow-[0_20px_50px_rgba(0,0,0,0.3)]
+        hover:border-white/10
+        transition-colors
+        duration-500
+      "
     >
-      <h1 className="font-bold m-7">
-        Contact us directly by sending a message
-      </h1>
+      {/* Top light beam accent */}
+      <div className="absolute top-0 inset-x-10 h-[1px] bg-gradient-to-r from-transparent via-[#E0B6E4]/40 to-transparent" />
+
+      <h2 className="text-xl md:text-2xl font-light text-white tracking-wide text-center mb-8 uppercase select-none">
+        Send us a message
+      </h2>
 
       <form
-        className="
-                    flex flex-col
-                    items-center
-                    w-full
-                    max-w-lg
-                "
+        onSubmit={(e) => e.preventDefault()}
+        className="flex flex-col gap-5 w-full"
       >
-        <label htmlFor="name" className="m-3">
-          Your Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          className="w-2/3 outline-none border border-purple-600 rounded px-2 py-0.5 bg-transparent"
-        />
+        {/* Your Name */}
+        <div className="flex flex-col gap-2 w-full group">
+          <label htmlFor="name" className="text-xs font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300">
+            Your Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            required
+            className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all duration-300 border border-white/5 focus:border-[#E0B6E4]/30 focus:shadow-[0_0_15px_rgba(224,182,228,0.06)] bg-black/45"
+          />
+        </div>
 
-        <label htmlFor="email" id="email" className="m-3">
-          Your Email Adress
-        </label>
-        <input
-          type="email"
-          id="email"
-          className="w-2/3 outline-none border border-purple-600 rounded px-2 py-0.5 bg-transparent"
-        />
+        {/* Your Email */}
+        <div className="flex flex-col gap-2 w-full group">
+          <label htmlFor="email" className="text-xs font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300">
+            Your Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            required
+            className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all duration-300 border border-white/5 focus:border-[#E0B6E4]/30 focus:shadow-[0_0_15px_rgba(224,182,228,0.06)] bg-black/45"
+          />
+        </div>
 
-        <label htmlFor="textarea" className="m-3">
-          Your Message
-        </label>
-        <textarea
-          id="textarea"
-          className="w-2/3 f-full px-2 py-2 outline-none border border-purple-600 rounded bg-transparent"
-          rows={8}
-        />
+        {/* Your Message */}
+        <div className="flex flex-col gap-2 w-full group">
+          <label htmlFor="textarea" className="text-xs font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300">
+            Your Message
+          </label>
+          <textarea
+            id="textarea"
+            required
+            rows={5}
+            className="w-full rounded-xl px-4 py-3 text-sm text-white outline-none transition-all duration-300 border border-white/5 focus:border-[#E0B6E4]/30 focus:shadow-[0_0_15px_rgba(224,182,228,0.06)] bg-black/45 resize-none"
+          />
+        </div>
 
-        <Button className="mt-10">Submit</Button>
+        <Button type="submit" className="w-full mt-4 bg-white hover:bg-gray-50 text-[#090709] border-none hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] active:scale-95 duration-500">
+          SUBMIT
+        </Button>
       </form>
     </div>
   );
