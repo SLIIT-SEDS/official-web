@@ -1,35 +1,46 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Hands3D from './Hands3D';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CallToAction = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'center center'],
-  });
+  useEffect(() => {
+    if (!containerRef.current || !sectionRef.current) return;
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ['-10%', '0%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+    // Premium fade-in and scale zoom as you scroll down
+    gsap.fromTo(
+      containerRef.current,
+      { opacity: 0, scale: 0.95 },
+      {
+        opacity: 1,
+        scale: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top bottom',
+          end: 'top 50%',
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-transparent pb-24 pt-0"
+      className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden bg-transparent py-24"
     >
-      {/* Hands image - Full width at top, non-overlapping */}
-      <motion.div
-        className="relative w-full z-0"
-        style={{ y: imageY, opacity }}
+      <div
+        ref={containerRef}
+        className="relative w-full z-0 max-w-none px-0 mx-0"
       >
-        <img
-          src="/cta-hands.png"
-          alt="Hands"
-          className="w-full h-auto object-cover"
-          style={{ mixBlendMode: 'screen' }}
-          loading="lazy"
-        />
-      </motion.div>
+        <Hands3D />
+      </div>
     </section>
   );
 };
