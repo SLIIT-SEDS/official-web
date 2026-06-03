@@ -1,7 +1,7 @@
 import HeroSection from './home/HeroSection';
 import AboutSection from './home/AboutSection';
 import Divisions from './home/DivisionsSection';
-import CallToAction from './home/CallToAction';
+import Hands3D from './home/Hands3D';
 import ApplyNowFormSection from './home/ApplyNowFormSection';
 
 const Landing = () => {
@@ -10,7 +10,7 @@ const Landing = () => {
       <HeroSection />
       <AboutSection />
       <Divisions />
-      <CallToAction />
+      <Hands3D />
       <ApplyNowFormSection />
     </>
   );
