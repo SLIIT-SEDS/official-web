@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import ContactPage from './pages/Contact/ContactPage';
 import AboutPage from './components/AboutPage';
+import EventsPage from './pages/events/EventsPage';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import SmoothScroll from './components/layout/SmoothScroll';
@@ -17,6 +18,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/events" element={<EventsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       </Routes>
