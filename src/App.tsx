@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Index />} />

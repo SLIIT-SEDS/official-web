@@ -80,6 +80,8 @@
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 }
 
@@ -255,4 +257,10 @@ html.lenis body {
     transform: translateX(100%);
     opacity: 1;
   }
+}
+
+/* Section scroll snapping */
+section, footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }

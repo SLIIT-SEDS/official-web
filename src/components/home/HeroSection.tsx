@@ -3,7 +3,7 @@ import Button from '../ui/Button';
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-24 pb-12 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 pt-24 pb-12 overflow-hidden">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         {/* Text Content */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 md:gap-6 z-20 md:col-span-12 lg:col-span-8">
@@ -32,7 +32,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
