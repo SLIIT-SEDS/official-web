@@ -21,13 +21,13 @@ const HeroSection = () => {
           <Button className="mt-2 md:mt-4">JOIN US</Button>
         </div>
 
-        {/* Astronaut Image - Hidden on mobile, shown on tablet as background, shown on desktop side-by-side */}
-        <div className="relative z-10 hidden md:flex md:col-span-12 lg:col-span-4 justify-center lg:justify-end items-center mt-12 lg:mt-0">
-          <div className="md:absolute lg:relative md:opacity-20 lg:opacity-80 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:top-auto lg:left-auto lg:-ml-40 lg:-mr-20 w-[900px] lg:min-w-[800px] lg:w-[220%] max-w-[1600px] pointer-events-none">
+        {/* Astronaut Image - Background on mobile/tablet, side-by-side on desktop */}
+        <div className="absolute lg:relative inset-0 lg:inset-auto z-10 flex lg:col-span-4 justify-center lg:justify-end items-center pointer-events-none">
+          <div className="absolute lg:relative opacity-[0.25] lg:opacity-80 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:top-auto lg:left-auto lg:-ml-40 lg:-mr-20 w-[550px] sm:w-[750px] md:w-[900px] lg:min-w-[800px] lg:w-[220%] max-w-[1600px] pointer-events-none">
             <img
               src={astronomyImg}
               alt="Astronaut Background"
-              className="w-full h-auto object-contain scale-110 lg:scale-125 origin-right"
+              className="w-full h-auto object-contain scale-110 lg:scale-125 origin-center lg:origin-right"
             />
           </div>
         </div>
