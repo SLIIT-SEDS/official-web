@@ -24,33 +24,7 @@ const Events = () => {
       type: 'upcoming',
       image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop',
     },
-    {
-      id: 2,
-      title: 'Introduction to Model Rocketry',
-      description: 'Learn the fundamentals of hybrid propulsion systems, aerodynamics, and safety regulations of amateur model rockets.',
-      date: 'August 05, 2026',
-      location: 'Online Webinar & Lab Session',
-      type: 'upcoming',
-      image: 'https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=600&auto=format&fit=crop',
-    },
-    {
-      id: 3,
-      title: 'Stargazing & Deep Sky Imaging Night',
-      description: 'An overnight astronomical observation session utilizing high-grade telescopes to capture nebulas and planets.',
-      date: 'May 12, 2026',
-      location: 'SLIIT Grounds',
-      type: 'past',
-      image: 'https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=600&auto=format&fit=crop',
-    },
-    {
-      id: 4,
-      title: 'Astro-Physics Symposium 2026',
-      description: 'A platform inviting leading researchers to share insights on dark matter, gravity waves, and quantum mechanics.',
-      date: 'March 20, 2026',
-      location: 'Main Conference Hall',
-      type: 'past',
-      image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=600&auto=format&fit=crop',
-    },
+
   ];
 
   const filteredEvents = eventsData.filter(event => {
@@ -61,12 +35,12 @@ const Events = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
       {/* Title */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wider text-white mb-4 text-glow">
-          SEDS SLIIT EVENTS
+      <div className="text-left mb-16 max-w-5xl">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none">
+          EVENTS
         </h1>
-        <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light">
-          Join our mission to explore space science and technology. Browse through our upcoming challenges, hands-on workshops, and past initiatives.
+        <p className="text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed select-none">
+          SEDS SLIIT is the official space exploration student organization at Sri Lanka Institute of Technology, and a recognized chapter of Students for the Exploration and Development of Space. Founded in 2019 by a student team led by Saditha Dissanayaka and Ravindu Piyapema, the chapter promotes space exploration through projects, events, research, and outreach.
         </p>
       </div>
 
@@ -76,11 +50,10 @@ const Events = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-6 py-2 rounded-full font-medium text-sm tracking-wide uppercase transition-all duration-300 border ${
-              activeTab === tab
+            className={`px-6 py-2 rounded-full font-medium text-sm tracking-wide uppercase transition-all duration-300 border ${activeTab === tab
                 ? 'bg-[#E0B6E4] text-[#090709] border-[#E0B6E4] shadow-[0_0_15px_rgba(224,182,228,0.3)]'
                 : 'bg-transparent text-white/70 border-white/10 hover:text-white hover:border-white/30'
-            }`}
+              }`}
           >
             {tab} Events
           </button>
@@ -103,11 +76,10 @@ const Events = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#090709]/80 to-transparent sm:hidden" />
               {/* Badge */}
-              <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
-                event.type === 'upcoming'
+              <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${event.type === 'upcoming'
                   ? 'bg-purple-500/80 text-white'
                   : 'bg-white/20 text-white/90'
-              }`}>
+                }`}>
                 {event.type}
               </span>
             </div>
