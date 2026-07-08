@@ -1,42 +1,18 @@
 import { useState } from 'react';
-import { Calendar, MapPin, ArrowRight } from 'lucide-react';
-
-interface Event {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  location: string;
-  type: 'upcoming' | 'past';
-  image: string;
-}
+import { ArrowUpRight, ArrowLeft } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { eventsData } from '../../data/events';
 
 const Events = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'upcoming' | 'past'>('all');
+  const [expandedEventId, setExpandedEventId] = useState<number | null>(null);
 
-  const eventsData: Event[] = [
-    {
-      id: 1,
-      title: 'Galactic Space Hackathon',
-      description: 'An intense 48-hour challenge to design solutions for outer-space living conditions and data visualization.',
-      date: 'July 18, 2026',
-      location: 'SLIIT Malabe Campus, Auditorium',
-      type: 'upcoming',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop',
-    },
-
-  ];
-
-  const filteredEvents = eventsData.filter(event => {
-    if (activeTab === 'all') return true;
-    return event.type === activeTab;
-  });
+  const expandedEvent = eventsData.find(e => e.id === expandedEventId);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
       {/* Title */}
-      <div className="text-left mb-16 max-w-5xl">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none">
+      <div className="text-left mb-12 max-w-5xl">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none">
           EVENTS
         </h1>
         <p className="text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed select-none">
@@ -44,73 +20,106 @@ const Events = () => {
         </p>
       </div>
 
-      {/* Tabs */}
-      <div className="flex justify-center gap-4 mb-12">
-        {(['all', 'upcoming', 'past'] as const).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-6 py-2 rounded-full font-medium text-sm tracking-wide uppercase transition-all duration-300 border ${activeTab === tab
-                ? 'bg-[#E0B6E4] text-[#090709] border-[#E0B6E4] shadow-[0_0_15px_rgba(224,182,228,0.3)]'
-                : 'bg-transparent text-white/70 border-white/10 hover:text-white hover:border-white/30'
-              }`}
+      <AnimatePresence mode="wait">
+        {!expandedEventId ? (
+          <motion.div
+            key="grid-view"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10"
           >
-            {tab} Events
-          </button>
-        ))}
-      </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-        {filteredEvents.map((event) => (
-          <div
-            key={event.id}
-            className="group relative bg-[#0f0b14]/40 border border-white/5 hover:border-[#E0B6E4]/20 rounded-3xl overflow-hidden backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(224,182,228,0.05)] flex flex-col sm:flex-row h-full"
-          >
-            {/* Image Wrapper */}
-            <div className="w-full sm:w-[40%] h-48 sm:h-full relative overflow-hidden shrink-0">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-[#090709]/80 to-transparent sm:hidden" />
-              {/* Badge */}
-              <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${event.type === 'upcoming'
-                  ? 'bg-purple-500/80 text-white'
-                  : 'bg-white/20 text-white/90'
-                }`}>
-                {event.type}
-              </span>
-            </div>
-
-            {/* Info */}
-            <div className="p-6 flex flex-col justify-between flex-1">
-              <div>
-                <h3 className="text-xl sm:text-2xl font-light text-white mb-3 group-hover:text-[#E0B6E4] transition-colors duration-300">
-                  {event.title}
-                </h3>
-                <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                  {event.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-2.5 border-t border-white/5 pt-4 text-xs sm:text-sm text-gray-400">
-                <div className="flex items-center gap-2">
-                  <Calendar size={16} className="text-[#E0B6E4]" />
-                  <span>{event.date}</span>
+            {eventsData.map((event) => (
+              <div
+                key={event.id}
+                className="group relative bg-[#0f0b14]/50 border border-white/5 hover:border-purple-500/20 rounded-[1.8rem] sm:rounded-[2.5rem] p-5 sm:p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(224,182,228,0.05)] flex flex-col h-full"
+              >
+                {/* Image Wrapper */}
+                <div className="w-full aspect-[4/3] relative rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden mb-5 sm:mb-6 shrink-0">
+                  <img
+                    src={event.image}
+                    alt={`${event.category} ${event.title}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin size={16} className="text-[#E0B6E4]" />
-                  <span className="truncate">{event.location}</span>
+
+                {/* Info */}
+                <div className="flex flex-col flex-1 px-2">
+                  <span className="text-[#a5a1aa] font-semibold text-xs tracking-widest uppercase mb-1.5 select-none">
+                    {event.category}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-light text-white mb-4 leading-tight">
+                    {event.title}
+                  </h3>
+                  <p className="text-gray-400/90 text-sm sm:text-base font-light leading-relaxed mb-6 flex-grow">
+                    {event.description}
+                  </p>
+
+                  {/* Action Button */}
+                  <div className="mt-auto pt-2">
+                    <button
+                      onClick={() => setExpandedEventId(event.id)}
+                      className="group/btn w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-[#E0B6E4] hover:border-[#E0B6E4]/50 hover:bg-white/5 transition-all duration-300 hover:scale-105 active:scale-95"
+                    >
+                      <ArrowUpRight size={18} className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            ))}
+          </motion.div>
+        ) : (
+          expandedEvent && (
+            <motion.div
+              key="detail-view"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} // smooth easeOutExpo
+              className="bg-[#0f0b14]/50 border border-white/5 rounded-[1.8rem] sm:rounded-[2.5rem] p-5 sm:p-8 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full"
+            >
+              {/* Back Button */}
+              <button
+                onClick={() => setExpandedEventId(null)}
+                className="flex items-center gap-2 text-white/70 hover:text-[#E0B6E4] mb-6 sm:mb-8 transition-colors text-sm uppercase tracking-wider font-medium group"
+              >
+                <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+                Back to Events
+              </button>
+
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+                {/* Left Side: Large Image */}
+                <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden shrink-0 border border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                  <img
+                    src={expandedEvent.image}
+                    alt={`${expandedEvent.category} ${expandedEvent.title}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Right Side: Details */}
+                <div className="flex-1 w-full">
+                  <span className="text-[#a5a1aa] font-semibold text-xs tracking-widest uppercase mb-2 block select-none">
+                    {expandedEvent.category}
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 leading-tight uppercase">
+                    {expandedEvent.title}
+                  </h2>
+                  <div className="space-y-4 sm:space-y-6 text-gray-300/90 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+                    {expandedEvent.longDescription.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )
+        )}
+      </AnimatePresence>
     </div>
   );
 };
 
 export default Events;
+
