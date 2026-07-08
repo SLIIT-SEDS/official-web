@@ -12,10 +12,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Blogs', path: '/blogs' },
     { name: 'Events', path: '/events' },
     { name: 'Board', path: '/board' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   // Lock body scroll when the mobile menu is open
