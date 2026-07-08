@@ -24,19 +24,22 @@ const AboutSection = () => {
         headerRef.current?.appendChild(span);
       });
 
-      gsap.to('.about-char', {
-        opacity: 1,
-        filter: 'blur(0px)',
-        y: [30, 0],
-        duration: 0.8,
-        stagger: 0.04,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      });
+      gsap.fromTo('.about-char',
+        { y: 30 },
+        {
+          opacity: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 0.8,
+          stagger: 0.04,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
     }
 
     // Fade in paragraph description

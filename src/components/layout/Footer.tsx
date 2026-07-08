@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
@@ -12,7 +11,7 @@ const Footer = () => {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-[120px] pointer-events-none"></div>
 
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_0.7fr_0.7fr_1fr] gap-12 mb-16 items-start text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-start text-center md:text-left">
 
           {/* Logo & Description */}
           <div className="flex flex-col items-center md:items-start md:flex-row gap-4 sm:gap-6 lg:-ml-4">
@@ -70,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:pl-12 flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start md:justify-self-center">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Links
             </h4>
@@ -127,7 +126,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start md:justify-self-end lg:pr-12">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Contact
             </h4>
@@ -136,32 +135,6 @@ const Footer = () => {
               <li>New Kandy Road</li>
               <li>Malabe, Sri Lanka</li>
             </ul>
-          </div>
-
-          {/* Subscribe */}
-          <div className="flex flex-col items-center md:items-start">
-            <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
-              Subscribe
-            </h4>
-            <p className="text-[#b8b4be] font-light text-[15px] mb-6 leading-relaxed">
-              Don't forget to subscribe to our news letters, enter your e-mail here.
-            </p>
-            <form
-              className="flex items-center bg-white rounded-md overflow-hidden h-11"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <input
-                type="email"
-                placeholder="Enter Your Email"
-                className="flex-1 h-full px-4 bg-transparent text-gray-900 text-sm font-medium outline-none placeholder:text-gray-400"
-              />
-              <button
-                type="submit"
-                className="h-full px-4 text-gray-800 hover:text-black transition-colors"
-              >
-                <Mail size={22} />
-              </button>
-            </form>
           </div>
 
         </div>

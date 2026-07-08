@@ -52,14 +52,14 @@ const Hands3D = () => {
   const rightHandX = useTransform(smoothProgress, [0, 0.95], [translationDistance, 0]);
 
   return (
-    <div
+    <section
       ref={containerRef}
-      className="relative w-full h-[500px] sm:h-[550px] lg:h-[650px] overflow-hidden bg-transparent flex items-center justify-center select-none"
+      className="relative w-full h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden bg-transparent flex items-center justify-center select-none"
     >
       {/* Left Hand (Human) - Large scale, slides from the left margin on scroll */}
       <motion.div
         style={{ x: leftHandX }}
-        className="absolute left-[-1%] sm:left-[-3%] md:left-[-4%] lg:left-[-5%] top-[8%] sm:top-[0%] -translate-y-1/2 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[60%] max-w-[1000px] aspect-square flex items-center justify-center pointer-events-none z-10"
+        className="absolute left-[-1%] sm:left-[-3%] md:left-[-4%] lg:left-[-5%] top-[8%] sm:top-[-6%] -translate-y-1/2 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[60%] max-w-[1000px] aspect-square flex items-center justify-center pointer-events-none z-10"
       >
         <img
           src="/lefttransparent.png"
@@ -70,7 +70,7 @@ const Hands3D = () => {
 
       {/* Right Hand (Robotic) - Large scale, slides from the right margin on scroll */}
       <motion.div
-        style={{ x: rightHandX, top: isMobile ? `${rightHandTop + 40}px` : `${rightHandTop}px` }}
+        style={{ x: rightHandX, top: isMobile ? `${rightHandTop + 40}px` : `${rightHandTop + 120}px` }}
         className="absolute right-[-1%] sm:right-[-3%] md:right-[-4%] lg:right-[-5%] -translate-y-1/2 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[60%] max-w-[1000px] aspect-square flex items-center justify-center pointer-events-none z-10"
       >
         <img
@@ -79,7 +79,7 @@ const Hands3D = () => {
           className="w-full h-full object-contain select-none pointer-events-none"
         />
       </motion.div>
-    </div>
+    </section>
   );
 };
 
