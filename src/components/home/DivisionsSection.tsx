@@ -54,19 +54,22 @@ const Divisions = () => {
         titleRef.current?.appendChild(span);
       });
 
-      gsap.to('.div-char', {
-        opacity: 1,
-        filter: 'blur(0px)',
-        y: [30, 0],
-        duration: 0.8,
-        stagger: 0.04,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      });
+      gsap.fromTo('.div-char',
+        { y: 30 },
+        {
+          opacity: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 0.8,
+          stagger: 0.04,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
     }
 
     // Subtitle reveal
