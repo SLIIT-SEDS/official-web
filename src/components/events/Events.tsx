@@ -9,16 +9,20 @@ const Events = () => {
   const expandedEvent = eventsData.find(e => e.id === expandedEventId);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 md:px-20 py-32 relative z-10">
-      {/* Title */}
-      <div className="text-left mb-12 max-w-5xl">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none">
-          EVENTS
-        </h1>
-        <p className="text-gray-300 text-base sm:text-lg md:text-xl font-light leading-relaxed select-none">
-          SEDS SLIIT is the official space exploration student organization at Sri Lanka Institute of Technology, and a recognized chapter of Students for the Exploration and Development of Space. Founded in 2019 by a student team led by Saditha Dissanayaka and Ravindu Piyapema, the chapter promotes space exploration through projects, events, research, and outreach.
-        </p>
-      </div>
+    <section className="w-full py-32 px-6 md:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto">
+        {/* Title */}
+        <div className="text-left mb-12 max-w-xl">
+          <h1 
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none"
+            style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
+          >
+            EVENTS
+          </h1>
+          <p className="text-white text-base md:text-lg leading-relaxed select-none">
+            SEDS SLIIT is the official space exploration student organization at Sri Lanka Institute of Technology, and a recognized chapter of Students for the Exploration and Development of Space. Founded in 2019 by a student team led by Saditha Dissanayaka and Ravindu Piyapema, the chapter promotes space exploration through projects, events, research, and outreach.
+          </p>
+        </div>
 
       <AnimatePresence mode="wait">
         {!expandedEventId ? (
@@ -52,7 +56,7 @@ const Events = () => {
                   <h3 className="text-2xl sm:text-3xl font-light text-white mb-4 leading-tight">
                     {event.title}
                   </h3>
-                  <p className="text-gray-400/90 text-sm sm:text-base font-light leading-relaxed mb-6 flex-grow">
+                  <p className="text-white text-sm sm:text-base font-light leading-relaxed mb-6 flex-grow">
                     {event.description}
                   </p>
 
@@ -106,7 +110,7 @@ const Events = () => {
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 leading-tight uppercase">
                     {expandedEvent.title}
                   </h2>
-                  <div className="space-y-4 sm:space-y-6 text-gray-300/90 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+                  <div className="space-y-4 sm:space-y-6 text-white text-sm sm:text-base md:text-lg font-light leading-relaxed">
                     {expandedEvent.longDescription.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
@@ -117,7 +121,8 @@ const Events = () => {
           )
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </section>
   );
 };
 

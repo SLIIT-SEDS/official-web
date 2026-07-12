@@ -126,7 +126,7 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative z-20 py-28 px-6 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden"
+      className="relative z-20 w-full bg-transparent overflow-hidden"
     >
       {/* Decorative stars behind About */}
       <div className="absolute inset-0 pointer-events-none z-0 opacity-20">
@@ -135,26 +135,23 @@ const AboutSection = () => {
         <div className="absolute bottom-[10%] left-[25%] w-[1px] h-[1px] bg-white rounded-full" />
       </div>
 
-      <div className="container mx-auto max-w-6xl flex flex-col items-center relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-20 py-32 flex flex-col relative z-10">
         {/* Header Text */}
-        <div className="text-center mb-24 flex flex-col items-center">
+        <div className="text-left mb-12 max-w-5xl">
           <h2
             ref={headerRef}
-            className="text-4xl sm:text-5xl md:text-6xl font-light tracking-wider text-white mb-8 select-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none"
           >
             WHO WE ARE
           </h2>
           <p
             ref={textRef}
-            className="text-gray-300 text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center select-none"
+            className="text-white text-base sm:text-lg md:text-xl font-light leading-relaxed select-none"
           >
             SEDS SLIIT is a student-led organization advancing space exploration
-            and <br className="hidden lg:block" />
-            development at Sri Lanka Institute of Information Technology.{' '}
-            <br className="hidden lg:block" />
+            and development at Sri Lanka Institute of Information Technology.
             As an official chapter of Students for the Exploration and
-            Development of Space, <br className="hidden lg:block" />
-            we empower students to explore, build, and innovate beyond the
+            Development of Space, we empower students to explore, build, and innovate beyond the
             classroom.
           </p>
         </div>
@@ -175,7 +172,7 @@ const AboutSection = () => {
               <h3 className="text-2xl md:text-3xl font-light text-white tracking-wide mt-4 select-none relative z-10">
                 Shared Mission
               </h3>
-              <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed select-none relative z-10">
+              <p className="text-white text-sm md:text-base font-light leading-relaxed select-none relative z-10">
                 SEDS SLIIT brings together students from diverse academic
                 backgrounds, united by a shared vision to shape the future of
                 space science and technology.
@@ -192,7 +189,7 @@ const AboutSection = () => {
               <h3 className="text-2xl md:text-3xl font-light text-white tracking-wide mt-4 select-none relative z-10">
                 Exploration Mode
               </h3>
-              <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed select-none relative z-10">
+              <p className="text-white text-sm md:text-base font-light leading-relaxed select-none relative z-10">
                 Through research, competitions, and technical challenges, we
                 encourage hands-on experimentation and problem-solving in
                 aerospace and engineering.
@@ -209,7 +206,7 @@ const AboutSection = () => {
               <h3 className="text-2xl md:text-3xl font-light text-white tracking-wide mt-4 select-none relative z-10">
                 Beyond Academics
               </h3>
-              <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed select-none relative z-10">
+              <p className="text-white text-sm md:text-base font-light leading-relaxed select-none relative z-10">
                 Workshops, events, and outreach programs connect classroom
                 knowledge with real-world applications, giving members practical
                 industry exposure.
