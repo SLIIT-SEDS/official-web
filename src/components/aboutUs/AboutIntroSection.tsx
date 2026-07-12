@@ -10,7 +10,7 @@ const AboutIntroSection: React.FC = () => {
           {/* LEFT COLUMN */}
           <div className="max-w-xl z-10">
             <h2
-              className="text-5xl md:text-6xl font-light text-white mb-6 tracking-widest leading-tight"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none"
               style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
             >
               ABOUT US

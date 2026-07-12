@@ -9,7 +9,7 @@ const Events = () => {
   const expandedEvent = eventsData.find(e => e.id === expandedEventId);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+    <div className="w-full max-w-7xl mx-auto px-6 md:px-20 py-32 relative z-10">
       {/* Title */}
       <div className="text-left mb-12 max-w-5xl">
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none">
