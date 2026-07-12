@@ -146,7 +146,7 @@ const Divisions = () => {
         </h2>
         <p
           ref={textRef}
-          className="text-gray-300 text-base sm:text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center select-none"
+          className="text-white text-base sm:text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center select-none"
         >
           Explore our specialized divisions driving innovation and research in
           space exploration.
@@ -185,7 +185,7 @@ const Divisions = () => {
                   <div className="mt-auto">
                     <a
                       href={division.link}
-                      className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-gray-300 hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+                      className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
                       style={{ fontFamily: "'Rajdhani', sans-serif" }}
                     >
                       Read More

@@ -16,7 +16,7 @@ const AboutIntroSection: React.FC = () => {
               ABOUT US
             </h2>
 
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <p className="text-white text-base md:text-lg leading-relaxed">
               SEDS SLIIT is the official space exploration student organization at Sri
               Lanka Institute of Technology, and a recognized chapter of Students for
               the Exploration and Development of Space. Founded in 2019 by a student

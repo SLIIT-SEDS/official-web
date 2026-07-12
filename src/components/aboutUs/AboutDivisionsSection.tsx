@@ -82,7 +82,7 @@ const AboutDivisionsSection: React.FC = () => {
                     {division.title}
                   </h3>
                   <p
-                    className="text-gray-400 text-lg md:text-xl leading-relaxed font-light"
+                    className="text-white text-lg md:text-xl leading-relaxed font-light"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}
                   >
                     {division.description}
