@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import image1 from '../../assets/divisions/image1.png';
-import image2 from '../../assets/divisions/image2.png';
-import image3 from '../../assets/divisions/image3.png';
-import image4 from '../../assets/divisions/image4.png';
+import image1 from '@/assets/divisions/image1.png';
+import image2 from '@/assets/divisions/image2.png';
+import image3 from '@/assets/divisions/image3.png';
+import image4 from '@/assets/divisions/image4.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,19 +54,22 @@ const Divisions = () => {
         titleRef.current?.appendChild(span);
       });
 
-      gsap.to('.div-char', {
-        opacity: 1,
-        filter: 'blur(0px)',
-        y: [30, 0],
-        duration: 0.8,
-        stagger: 0.04,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      });
+      gsap.fromTo('.div-char',
+        { y: 30 },
+        {
+          opacity: 1,
+          filter: 'blur(0px)',
+          y: 0,
+          duration: 0.8,
+          stagger: 0.04,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
     }
 
     // Subtitle reveal
@@ -143,7 +146,7 @@ const Divisions = () => {
         </h2>
         <p
           ref={textRef}
-          className="text-gray-300 text-base sm:text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center select-none"
+          className="text-white text-base sm:text-lg md:text-xl md:leading-relaxed font-light max-w-4xl text-center select-none"
         >
           Explore our specialized divisions driving innovation and research in
           space exploration.
@@ -182,7 +185,7 @@ const Divisions = () => {
                   <div className="mt-auto">
                     <a
                       href={division.link}
-                      className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-gray-300 hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+                      className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
                       style={{ fontFamily: "'Rajdhani', sans-serif" }}
                     >
                       Read More

@@ -55,7 +55,7 @@ const ApplyNowFormSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full py-28 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent"
+      className="relative w-full py-12 md:py-28 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Background Animated Nebulas */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
@@ -72,7 +72,7 @@ const ApplyNowFormSection = () => {
         {/* Heading */}
         <h2
           ref={headingRef}
-          className="mb-16 text-center font-light tracking-wider bg-gradient-to-r from-white to-[#E0B6E4] bg-clip-text text-transparent select-none opacity-0"
+          className="mb-10 md:mb-16 text-center font-light tracking-wider bg-gradient-to-r from-white to-[#E0B6E4] bg-clip-text text-transparent select-none opacity-0"
           style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
         >
           READY TO EXPLORE SPACE?

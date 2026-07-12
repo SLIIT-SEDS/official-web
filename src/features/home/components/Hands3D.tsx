@@ -54,7 +54,7 @@ const Hands3D = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-[600px] sm:h-[700px] lg:h-[800px] overflow-hidden bg-transparent flex items-center justify-center select-none"
+      className="relative w-full h-[350px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden bg-transparent flex items-center justify-center select-none"
     >
       {/* Left Hand (Human) - Large scale, slides from the left margin on scroll */}
       <motion.div

@@ -1,5 +1,5 @@
 import React from "react";
-import planets from "../../assets/globals.svg";
+import planets from "@/assets/globals.svg";
 
 const AboutIntroSection: React.FC = () => {
   return (
@@ -10,13 +10,13 @@ const AboutIntroSection: React.FC = () => {
           {/* LEFT COLUMN */}
           <div className="max-w-xl z-10">
             <h2
-              className="text-5xl md:text-6xl font-light text-white mb-6 tracking-widest leading-tight"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none"
               style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
             >
               ABOUT US
             </h2>
 
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <p className="text-white text-base md:text-lg leading-relaxed">
               SEDS SLIIT is the official space exploration student organization at Sri
               Lanka Institute of Technology, and a recognized chapter of Students for
               the Exploration and Development of Space. Founded in 2019 by a student
