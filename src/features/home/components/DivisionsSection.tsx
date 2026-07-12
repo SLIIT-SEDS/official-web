@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import image1 from '../../assets/divisions/image1.png';
-import image2 from '../../assets/divisions/image2.png';
-import image3 from '../../assets/divisions/image3.png';
-import image4 from '../../assets/divisions/image4.png';
+import image1 from '@/assets/divisions/image1.png';
+import image2 from '@/assets/divisions/image2.png';
+import image3 from '@/assets/divisions/image3.png';
+import image4 from '@/assets/divisions/image4.png';
 
 gsap.registerPlugin(ScrollTrigger);
 

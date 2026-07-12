@@ -1,4 +1,4 @@
-import Events from '@/components/events/Events';
+import EventsList from '@/features/events/components/EventsList';
 
 const EventsPage = () => {
   return (
@@ -16,7 +16,7 @@ const EventsPage = () => {
       <div className="fixed inset-0 bg-gradient-to-r from-black/60 via-[#090709]/25 to-transparent z-0 pointer-events-none" />
       <div className="fixed inset-0 bg-gradient-to-b from-transparent via-[#090709]/30 to-[#090709] z-0 pointer-events-none" />
 
-      <Events />
+      <EventsList />
     </div>
   );
 };

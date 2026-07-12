@@ -1,5 +1,5 @@
-import AboutIntroSection from './aboutUs/AboutIntroSection';
-import AboutDivisionsSection from './aboutUs/AboutDivisionsSection';
+import AboutIntroSection from '@/features/about/components/AboutIntroSection';
+import AboutDivisionsSection from '@/features/about/components/AboutDivisionsSection';
 
 const AboutPage = () => {
   return (
@@ -11,4 +11,3 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
-

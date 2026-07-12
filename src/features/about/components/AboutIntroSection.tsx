@@ -1,5 +1,5 @@
 import React from "react";
-import planets from "../../assets/globals.svg";
+import planets from "@/assets/globals.svg";
 
 const AboutIntroSection: React.FC = () => {
   return (

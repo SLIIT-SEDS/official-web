@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ArrowUpRight, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { eventsData } from '../../data/events';
+import { eventsData } from '@/data/events';
 
-const Events = () => {
+const EventsList = () => {
   const [expandedEventId, setExpandedEventId] = useState<number | null>(null);
 
   const expandedEvent = eventsData.find(e => e.id === expandedEventId);
@@ -126,5 +126,5 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventsList;
 

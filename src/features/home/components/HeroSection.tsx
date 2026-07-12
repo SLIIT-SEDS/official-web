@@ -1,5 +1,5 @@
-import astronomyImg from '../../assets/astronomy.png';
-import Button from '../ui/Button';
+import astronomyImg from '@/assets/astronomy.png';
+import Button from '@/components/ui/Button';
 
 const HeroSection = () => {
   return (

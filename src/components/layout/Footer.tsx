@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
-import logo from "../../assets/seds-logo.png";
+import logo from "@/assets/seds-logo.png";
 
 const Footer = () => {
   return (
