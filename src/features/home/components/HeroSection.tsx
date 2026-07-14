@@ -8,10 +8,19 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4 md:gap-6 z-20 md:col-span-12 lg:col-span-8">
           <h1
-            className="text-glow font-light tracking-wider text-white whitespace-normal md:whitespace-nowrap leading-none w-full"
+            className="text-glow font-light tracking-wider text-white whitespace-normal md:whitespace-nowrap leading-none w-full relative z-10"
             style={{ fontSize: 'clamp(3.8rem, 12vw, 7.5rem)' }}
           >
-            SEDS SLIIT
+            <span className="relative inline-block">
+              {/* SHADE IMAGE BEHIND "SEDS" */}
+              <img
+                src="/shade.png"
+                alt="shade background glow"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-none opacity-60 pointer-events-none select-none mix-blend-screen"
+              />
+              SEDS
+            </span>{' '}
+            SLIIT
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-white max-w-lg leading-relaxed font-light mt-2">
             Student for the Exploration and{' '}

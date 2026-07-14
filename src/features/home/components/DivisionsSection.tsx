@@ -118,6 +118,13 @@ const Divisions = () => {
   return (
     <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden">
 
+      {/* GLOW SHADE BACKGROUND */}
+      <img
+        src="/shade.png"
+        alt="shade background glow"
+        className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 z-0 w-[1500px] md:w-[2500px] max-w-none opacity-45 pointer-events-none select-none mix-blend-screen"
+      />
+
       {/* Cyber space grid matrix background */}
       <div
         className="absolute inset-0 pointer-events-none z-0 flex justify-center items-end"
