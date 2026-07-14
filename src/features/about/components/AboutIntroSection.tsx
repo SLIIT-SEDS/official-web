@@ -9,12 +9,20 @@ const AboutIntroSection: React.FC = () => {
 
           {/* LEFT COLUMN */}
           <div className="max-w-xl z-10">
-            <h2
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white mb-6 uppercase select-none"
-              style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
-            >
-              ABOUT US
-            </h2>
+            <div className="relative inline-block mb-6">
+              {/* SHADE IMAGE BEHIND TITLE */}
+              <img
+                src="/shade.png"
+                alt="shade background glow"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-none opacity-60 pointer-events-none select-none mix-blend-screen"
+              />
+              <h2
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white uppercase select-none relative z-10"
+                style={{ fontFamily: "'Exo 2', 'Rajdhani', sans-serif" }}
+              >
+                ABOUT US
+              </h2>
+            </div>
 
             <p className="text-white text-base md:text-lg leading-relaxed">
               SEDS SLIIT is the official space exploration student organization at Sri
