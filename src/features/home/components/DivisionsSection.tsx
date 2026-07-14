@@ -116,13 +116,15 @@ const Divisions = () => {
   }, []);
 
   return (
-    <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center overflow-hidden">
+    <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center">
 
-      {/* GLOW SHADE BACKGROUND */}
-      <img
-        src="/shade.png"
-        alt="shade background glow"
-        className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 z-0 w-[1500px] md:w-[2500px] max-w-none opacity-45 pointer-events-none select-none mix-blend-screen"
+      {/* DYNAMIC CSS SHADE BACKGROUND */}
+      <div 
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] rounded-full pointer-events-none z-0 mix-blend-screen"
+        style={{
+          background: 'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
+          filter: 'blur(100px)'
+        }} 
       />
 
       {/* Cyber space grid matrix background */}
@@ -162,10 +164,6 @@ const Divisions = () => {
 
       {/* Horizontal Marquee Container */}
       <div className="w-full max-w-[1600px] mx-auto pb-10 relative z-10 px-4 overflow-hidden group/marquee">
-        {/* Soft fade-out gradients at the boundaries */}
-        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-[#090709] to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-[#090709] to-transparent z-20 pointer-events-none" />
-
         {/* Scroll Track */}
         <div className="flex flex-row gap-6 w-max animate-[horizontal-marquee_30s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
           {/* Duplicated list for infinite seamless loop */}

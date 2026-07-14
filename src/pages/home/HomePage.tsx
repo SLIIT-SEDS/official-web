@@ -6,7 +6,7 @@ import ApplyNowFormSection from '@/features/home/components/ApplyNowFormSection'
 
 const HomePage = () => {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       <div className="relative z-10 flex flex-col w-full">
         <HeroSection />
         <AboutSection />
