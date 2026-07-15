@@ -54,8 +54,32 @@ const Hands3D = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-[350px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden bg-transparent flex items-center justify-center select-none"
+      className="relative w-full h-[350px] sm:h-[600px] md:h-[700px] lg:h-[800px] bg-transparent flex items-center justify-center select-none"
     >
+      {/* Left Hand Start Glow */}
+      <div 
+        className="absolute rounded-full pointer-events-none z-0 mix-blend-screen w-[600px] h-[600px] md:w-[1200px] md:h-[1200px]"
+        style={{
+          left: 0,
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+          background: 'radial-gradient(circle, rgba(224,182,228,0.35) 0%, rgba(224,182,228,0) 70%)',
+          filter: 'blur(150px)'
+        }} 
+      />
+
+      {/* Right Hand Start Glow */}
+      <div 
+        className="absolute rounded-full pointer-events-none z-0 mix-blend-screen w-[600px] h-[600px] md:w-[1200px] md:h-[1200px]"
+        style={{
+          right: 0,
+          top: '50%',
+          transform: 'translate(50%, -50%)',
+          background: 'radial-gradient(circle, rgba(224,182,228,0.35) 0%, rgba(224,182,228,0) 70%)',
+          filter: 'blur(150px)'
+        }} 
+      />
+
       {/* Left Hand (Human) - Large scale, slides from the left margin on scroll */}
       <motion.div
         style={{ x: leftHandX }}
