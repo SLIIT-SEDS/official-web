@@ -156,7 +156,8 @@ const ApplyNowFormSection = () => {
             {/* Premium Submit Button with magnetic zoom */}
             <button
               type="submit"
-              className="join-button mt-6 w-full rounded-full bg-white py-4 text-[12px] font-bold uppercase tracking-[0.25em] text-[#090709] transition-all duration-500 hover:bg-gray-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] active:scale-95"
+              className="join-button mt-6 w-full rounded-xl bg-white py-4 text-[12px] font-bold uppercase tracking-[0.25em] text-[#090709] transition-all duration-500 hover:bg-gray-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] active:scale-95"
+              style={{ fontFamily: "'Rajdhani', sans-serif" }}
             >
               JOIN THE MISSION
             </button>
