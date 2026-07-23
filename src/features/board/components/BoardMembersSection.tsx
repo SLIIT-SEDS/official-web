@@ -61,7 +61,7 @@ const BoardMembersSection: React.FC = () => {
   const others = boardMembers.filter((m) => !m.featured);
 
   return (
-    <section className="w-full min-h-screen pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20 relative overflow-hidden bg-[#0a0a0e] text-white">
+    <section className="w-full min-h-screen pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20 relative overflow-hidden bg-transparent text-white">
       {/* ── Header ── */}
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         {/* Title + shade.png glow behind */}
