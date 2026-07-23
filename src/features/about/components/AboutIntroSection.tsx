@@ -8,7 +8,7 @@ const AboutIntroSection: React.FC = () => {
         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-6 items-start relative">
 
           {/* LEFT COLUMN */}
-          <div className="max-w-xl z-10">
+          <div className="max-w-3xl z-10">
             <div className="relative inline-block mb-6">
               {/* Dynamic CSS Title Glow */}
               <div 
@@ -29,7 +29,7 @@ const AboutIntroSection: React.FC = () => {
               </h2>
             </div>
 
-            <p className="text-white text-base md:text-lg leading-relaxed">
+            <p className="text-white text-xl sm:text-2xl md:text-3xl font-light leading-relaxed">
               SEDS SLIIT is the official space exploration student organization at Sri
               Lanka Institute of Technology, and a recognized chapter of Students for
               the Exploration and Development of Space. Founded in 2019 by a student

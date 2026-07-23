@@ -2,19 +2,17 @@ import BoardMembersSection from '@/features/board/components/BoardMembersSection
 
 const BoardPage = () => {
   return (
-    <div className="min-h-screen pt-24 pb-20 relative flex flex-col items-center justify-start bg-[#090709]">
-      {/* Full Page Background Image */}
-      <div className="fixed inset-0 -translate-y-20 h-[calc(100vh+5rem)] z-0 pointer-events-none">
-        <img
-          src="/eventBG.png"
-          alt="Board Background"
-          className="w-full h-full object-cover opacity-100 brightness-125 select-none pointer-events-none"
+    <div className="min-h-screen pt-24 pb-20 relative flex flex-col items-center justify-start bg-[#090709] overflow-hidden">
+      {/* Ambient background space glow (clean shading without astronaut figure) */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] sm:w-[1200px] sm:h-[1200px] rounded-full mix-blend-screen opacity-50"
+          style={{
+            background: 'radial-gradient(circle, rgba(224, 182, 228, 0.18) 0%, rgba(9, 7, 9, 0) 70%)',
+            filter: 'blur(120px)',
+          }}
         />
       </div>
-
-      {/* Blend overlays for content readability and seamless shading */}
-      <div className="fixed inset-0 bg-gradient-to-r from-black/60 via-[#090709]/25 to-transparent z-0 pointer-events-none" />
-      <div className="fixed inset-0 bg-gradient-to-b from-transparent via-[#090709]/30 to-[#090709] z-0 pointer-events-none" />
 
       <div className="relative z-10 w-full">
         <BoardMembersSection />

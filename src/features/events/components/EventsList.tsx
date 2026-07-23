@@ -12,7 +12,7 @@ const EventsList = () => {
     <section className="w-full py-32 px-6 md:px-20 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-left mb-12 max-w-xl">
+        <div className="text-left mb-12 max-w-4xl">
           <div className="relative inline-block mb-6">
             {/* Dynamic CSS Title Glow */}
             <div 
@@ -32,7 +32,7 @@ const EventsList = () => {
               EVENTS
             </h1>
           </div>
-          <p className="text-white text-base md:text-lg leading-relaxed select-none">
+          <p className="text-white text-xl sm:text-2xl md:text-3xl font-light leading-relaxed select-none">
             SEDS SLIIT is the official space exploration student organization at Sri Lanka Institute of Technology, and a recognized chapter of Students for the Exploration and Development of Space. Founded in 2019 by a student team led by Saditha Dissanayaka and Ravindu Piyapema, the chapter promotes space exploration through projects, events, research, and outreach.
           </p>
         </div>

@@ -64,14 +64,14 @@ const BoardMembersSection: React.FC = () => {
     <section className="w-full min-h-screen pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 md:px-16 lg:px-20 relative overflow-hidden bg-transparent text-white">
       {/* ── Header ── */}
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
-        {/* Title + shade.png glow behind */}
+        {/* Title + smooth CSS radial glow behind (no hard edges/lines) */}
         <div className="relative flex items-center justify-center mb-3 sm:mb-4 w-full">
-          {/* Shade image behind title */}
-          <img
-            src="/shade.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] md:w-[850px] max-w-none opacity-70 pointer-events-none select-none mix-blend-screen"
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[650px] md:w-[900px] h-[160px] sm:h-[260px] rounded-full pointer-events-none select-none mix-blend-screen"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(224, 182, 228, 0.35) 0%, rgba(163, 133, 199, 0.12) 50%, rgba(9, 7, 9, 0) 75%)',
+              filter: 'blur(45px)',
+            }}
           />
           <h2
             className="relative z-10 text-3xl sm:text-6xl md:text-8xl lg:text-9xl font-light tracking-wide text-white uppercase text-center leading-none"
@@ -82,7 +82,7 @@ const BoardMembersSection: React.FC = () => {
         </div>
 
         {/* Description */}
-        <p className="text-white text-sm sm:text-lg md:text-xl font-light text-center leading-relaxed mb-10 sm:mb-16 max-w-lg px-2">
+        <p className="text-white text-xl sm:text-2xl md:text-3xl font-light text-center leading-relaxed mb-10 sm:mb-16 max-w-2xl px-2">
           Meet the dedicated team leading the
           <br />
           SEDS SLIIT Community
