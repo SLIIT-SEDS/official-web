@@ -6,11 +6,11 @@ import logo from "@/assets/seds-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative z-20 bg-[#090709] pt-20 pb-10 px-4 sm:px-8 md:px-12 lg:px-20 font-sans">
+    <footer className="relative z-20 bg-gradient-to-b from-transparent via-[#090709]/80 to-[#090709] pt-20 pb-10 px-4 sm:px-8 md:px-12 lg:px-20 font-sans">
       {/* Wrapper to clip the bottom of the glow and prevent page extension */}
       <div className="absolute top-[-800px] bottom-0 left-0 right-0 overflow-hidden pointer-events-none z-0">
         {/* Dynamic CSS Center-Bottom Glow */}
-        <div 
+        <div
           className="absolute rounded-full mix-blend-screen w-[800px] h-[800px] md:w-[1600px] md:h-[1600px]"
           style={{
             left: '50%',
@@ -18,7 +18,7 @@ const Footer = () => {
             transform: 'translate(-50%, 50%)',
             background: 'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
             filter: 'blur(150px)'
-          }} 
+          }}
         />
       </div>
 

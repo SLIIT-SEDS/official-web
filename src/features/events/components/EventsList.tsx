@@ -12,13 +12,18 @@ const EventsList = () => {
     <section className="w-full py-32 px-6 md:px-20 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-left mb-12 max-w-xl">
+        <div className="text-left mb-12 max-w-4xl">
           <div className="relative inline-block mb-6">
-            {/* SHADE IMAGE BEHIND TITLE */}
-            <img
-              src="/shade.png"
-              alt="shade background glow"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-none opacity-60 pointer-events-none select-none mix-blend-screen"
+            {/* Dynamic CSS Title Glow */}
+            <div 
+              className="absolute rounded-full pointer-events-none -z-10 mix-blend-screen w-[450px] h-[450px] sm:w-[750px] sm:h-[750px] md:w-[1000px] md:h-[1000px] lg:w-[1300px] lg:h-[1300px]"
+              style={{
+                left: '40%',
+                top: '50%',
+                transform: 'translate(-50%, -50%)',
+                background: 'radial-gradient(circle, rgba(224, 182, 228, 0.25) 0%, rgba(224, 182, 228, 0) 70%)',
+                filter: 'blur(130px)'
+              }}
             />
             <h1 
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-wider text-white uppercase select-none relative z-10"
@@ -27,7 +32,7 @@ const EventsList = () => {
               EVENTS
             </h1>
           </div>
-          <p className="text-white text-base md:text-lg leading-relaxed select-none">
+          <p className="text-white text-xl sm:text-2xl md:text-3xl font-light leading-relaxed select-none">
             SEDS SLIIT is the official space exploration student organization at Sri Lanka Institute of Technology, and a recognized chapter of Students for the Exploration and Development of Space. Founded in 2019 by a student team led by Saditha Dissanayaka and Ravindu Piyapema, the chapter promotes space exploration through projects, events, research, and outreach.
           </p>
         </div>
