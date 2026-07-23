@@ -42,11 +42,15 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, role, image }) => {
       </div>
 
       {/* Text Details */}
-      <div className="text-center px-2">
-        <h3 className="font-semibold text-gray-100 text-base sm:text-lg leading-tight">
+      <div className="flex flex-col items-center text-center px-2">
+        {/* Role (Top line) */}
+        <p className="font-semibold text-white text-base sm:text-lg leading-tight">
+          {role}
+        </p>
+        {/* Name (Bottom line) */}
+        <h3 className="font-light text-white text-xl sm:text-2xl mt-1 leading-tight">
           {name}
         </h3>
-        <p className="text-gray-400 text-xs sm:text-sm mt-1">{role}</p>
       </div>
     </div>
   );
@@ -97,9 +101,9 @@ const BoardMembersSection: React.FC = () => {
             </div>
           )}
 
-          {/* Remaining members — responsive grid / flex layout */}
+          {/* Remaining members — 3 cards per row on md+ screens */}
           {others.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10 w-full max-w-6xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 place-items-center w-full max-w-5xl">
               {others.map((member) => (
                 <MemberCard
                   key={member.id}
