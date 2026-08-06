@@ -27,8 +27,17 @@ const HeroSection = () => {
             <br className="hidden sm:block" />
             Development of Space
           </p>
-          <Button className="mt-2 md:mt-4">JOIN US</Button>
-        </div>
+          <Button
+            className="mt-2 md:mt-4"
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLSdFoyQJuF6YyJRXj0sbTV3dwbYFaORtjmFdepfk1IdayR2gzg/viewform",
+                "_blank"
+              )
+            }
+          >
+            JOIN US
+          </Button>        </div>
 
         {/* Astronaut Image - Background on mobile/tablet, side-by-side on desktop */}
         <div className="absolute lg:relative inset-0 lg:inset-auto z-10 flex lg:col-span-4 justify-center lg:justify-end items-center pointer-events-none">

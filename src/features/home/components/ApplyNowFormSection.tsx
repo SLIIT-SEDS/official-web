@@ -75,7 +75,7 @@ const ApplyNowFormSection = () => {
           className="mb-10 md:mb-16 text-center font-light tracking-wider bg-gradient-to-r from-white to-[#E0B6E4] bg-clip-text text-transparent select-none opacity-0"
           style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
         >
-          READY TO EXPLORE SPACE?
+          Need More Details?
         </h2>
 
         {/* Form Card */}
@@ -90,7 +90,7 @@ const ApplyNowFormSection = () => {
             className="mb-10 text-center font-light text-white tracking-wide select-none"
             style={{ fontSize: '2.2rem', fontFamily: "'Rajdhani', sans-serif" }}
           >
-            Apply Now!
+            Ask  Now!
           </h3>
 
           <form
@@ -139,8 +139,7 @@ const ApplyNowFormSection = () => {
             {/* Year of Study */}
             <div className="flex flex-col gap-2 relative group">
               <label htmlFor="year" className="text-sm font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300">
-                Year of study
-              </label>
+                Message              </label>
               <input
                 type="text"
                 id="year"
@@ -159,7 +158,7 @@ const ApplyNowFormSection = () => {
               className="join-button mt-6 w-full rounded-xl bg-white py-4 text-[12px] font-bold uppercase tracking-[0.25em] text-[#090709] transition-all duration-500 hover:bg-gray-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] active:scale-95"
               style={{ fontFamily: "'Rajdhani', sans-serif" }}
             >
-              JOIN THE MISSION
+              Submit
             </button>
           </form>
         </div>

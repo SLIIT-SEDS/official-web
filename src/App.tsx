@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from '@/pages/home/HomePage';
-import ContactPage from '@/pages/contact/ContactPage';
 import AboutPage from '@/pages/about/AboutPage';
 import EventsPage from '@/pages/events/EventsPage';
 import BoardPage from '@/pages/board/BoardPage';
@@ -21,7 +20,6 @@ const App = () => (
         <Route path="/about" element={<AboutPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/board" element={<BoardPage />} />
-        <Route path="/contact" element={<ContactPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       </Routes>
       <Footer />
