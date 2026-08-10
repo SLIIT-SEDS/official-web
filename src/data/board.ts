@@ -52,17 +52,12 @@ export const boardMembers: BoardMember[] = [
     role: 'Treasurer',
     image: rashaadImg,
   },
+  { id: '7', name: 'Yesen Binuwara', role: 'Project Manager', image: yesenImg },
   {
     id: '6',
     name: 'Kawan Rupasinghe',
     role: 'Division Manager',
     image: kawanImg,
-  },
-  {
-    id: '7',
-    name: 'Yesen Binuwara',
-    role: 'Project Manager',
-    image: yesenImg,
   },
   {
     id: '8',
