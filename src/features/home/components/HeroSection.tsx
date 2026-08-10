@@ -23,7 +23,7 @@ const HeroSection = () => {
             SLIIT
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-white max-w-lg leading-relaxed font-light mt-2">
-            Student for the Exploration and{' '}
+            Students for the Exploration and{' '}
             <br className="hidden sm:block" />
             Development of Space
           </p>
