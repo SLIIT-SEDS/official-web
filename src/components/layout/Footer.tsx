@@ -126,15 +126,7 @@ const Footer = () => {
                   Board
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
+              </ul>
           </div>
 
           {/* Contact */}
