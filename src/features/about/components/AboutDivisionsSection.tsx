@@ -40,7 +40,7 @@ const divisions: Division[] = [
 
 const AboutDivisionsSection: React.FC = () => {
   return (
-    <section className="w-full pb-32 px-6 md:px-20">
+    <section id="divisions" className="w-full pb-32 px-6 md:px-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* SECTION HEADER */}
         <div className="mb-16 md:mb-24">
@@ -58,7 +58,8 @@ const AboutDivisionsSection: React.FC = () => {
             return (
               <div
                 key={division.id}
-                className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-center"
+                id={`division-${division.id}`}
+                className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-center scroll-mt-24"
               >
                 {/* IMAGE CONTAINER */}
                 <div
