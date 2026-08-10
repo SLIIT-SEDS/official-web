@@ -6,6 +6,7 @@ import EventsPage from '@/pages/events/EventsPage';
 import BoardPage from '@/pages/board/BoardPage';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ScrollToTop from '@/components/layout/ScrollToTop';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 
 const queryClient = new QueryClient();
@@ -14,6 +15,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       {/* <SmoothScroll /> */}
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

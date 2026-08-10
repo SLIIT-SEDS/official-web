@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "@/assets/seds-logo.png";
@@ -44,15 +44,15 @@ const Footer = () => {
                 </h4>
                 <div className="flex gap-6 items-center justify-center md:justify-start">
                   <a
-                    href="https://twitter.com"
+                    href="https://facebook.com/sedssliit"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
                   >
-                    <FaTwitter size={26} />
+                    <FaFacebookF size={26} />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/SLIIT-SEDS"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -60,7 +60,7 @@ const Footer = () => {
                     <FaGithub size={26} />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/company/seds-sliit"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -68,7 +68,7 @@ const Footer = () => {
                     <FaLinkedin size={26} />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://instagram.com/seds_sliit"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -81,11 +81,11 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col items-center md:items-start md:justify-self-center">
+          <div className="flex flex-col items-center text-center">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Links
             </h4>
-            <ul className="flex flex-col gap-2.5 mt-1">
+            <ul className="flex flex-col items-center gap-2.5 mt-1">
               <li>
                 <Link
                   to="/"
@@ -103,14 +103,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                {/* <Link
-                  to="/blogs"
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Blogs
-                </Link> */}
-              </li>
-              <li>
                 <Link
                   to="/events"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
@@ -126,21 +118,28 @@ const Footer = () => {
                   Board
                 </Link>
               </li>
-              </ul>
+            </ul>
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center md:items-start md:justify-self-end lg:pr-12">
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Contact
             </h4>
+            <div className="mb-3">
+              <a
+                href="mailto:sliitseds@gmail.com"
+                className="text-[#b8b4be] hover:text-[#e5e1e8] transition-colors"
+              >
+                sliitseds@gmail.com
+              </a>
+            </div>
             <ul className="flex flex-col gap-1 text-[#b8b4be] font-light text-[15px] leading-snug">
               <li>SLIIT Malabe Campus</li>
               <li>New Kandy Road</li>
               <li>Malabe, Sri Lanka</li>
             </ul>
           </div>
-
         </div>
 
         <div className="pt-12 flex justify-center items-center">
