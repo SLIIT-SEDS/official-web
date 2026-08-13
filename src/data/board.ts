@@ -8,9 +8,9 @@ import yesenImg from '@/board/Yesen Binuwara.png';
 import nikiniImg from '@/board/Niki Bandara.png';
 import tharukaImg from '@/board/Tharuka Pathmasiri.png';
 import shageeshanImg from '@/board/Shageeshan Thamodharam.png';
-import dilaraImg from '@/board/Dilara Liyanage.jpg';
-import gayathriImg from '@/board/Gayathri Priya.jpg';
-import sachinImg from '@/board/SACHIN WEERASOORIYA.jpeg';
+import dilaraImg from '@/board/Dilara Liyanage.png';
+import gayathriImg from '@/board/Gayathri Priya.png';
+import sachinImg from '@/board/SACHIN WEERASOORIYA.png';
 
 export interface BoardMember {
   id: string;
