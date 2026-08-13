@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaLinkedin } from "react-icons/fa";
+import { FaTwitter, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "@/assets/seds-logo.png";
+import { Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -44,23 +45,23 @@ const Footer = () => {
                 </h4>
                 <div className="flex gap-6 items-center justify-center md:justify-start">
                   <a
-                    href="https://facebook.com/sedssliit"
+                    href="https://www.facebook.com/SEDS.SLIIT"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
                   >
-                    <FaFacebookF size={26} />
+                    <Facebook size={26} />
                   </a>
                   <a
-                    href="https://github.com/SLIIT-SEDS"
+                    href="https://www.tiktok.com/@sliit.seds?_r=1&_t=ZS-9871f2ehypZ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
                   >
-                    <FaGithub size={26} />
+                    <FaTiktok size={26} />
                   </a>
                   <a
-                    href="https://linkedin.com/company/seds-sliit"
+                    href="https://www.linkedin.com/company/seds-sliit/?originalSubdomain=lk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -68,7 +69,7 @@ const Footer = () => {
                     <FaLinkedin size={26} />
                   </a>
                   <a
-                    href="https://instagram.com/seds_sliit"
+                    href="https://www.instagram.com/sedssliit/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
