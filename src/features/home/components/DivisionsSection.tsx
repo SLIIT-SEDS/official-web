@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,25 +15,21 @@ const divisionsData = [
     id: 1,
     title: 'Observation and\nCamping Division',
     image: image1,
-    link: '#',
   },
   {
     id: 2,
     title: 'Data Analysis and\nSoftware Division',
     image: image2,
-    link: '#',
   },
   {
     id: 3,
     title: 'Robotics and\nRover Division',
     image: image3,
-    link: '#',
   },
   {
     id: 4,
     title: 'Biotechnical\nDivision',
     image: image4,
-    link: '#',
   },
 ];
 
@@ -188,13 +185,13 @@ const Divisions = () => {
                     {division.title}
                   </h3>
                   <div className="mt-auto">
-                    <a
-                      href={division.link}
+                    <Link
+                      to={`/about#division-${division.id}`}
                       className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
                       style={{ fontFamily: "'Rajdhani', sans-serif" }}
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
