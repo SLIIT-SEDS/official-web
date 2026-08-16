@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,25 +15,25 @@ const divisionsData = [
     id: 1,
     title: 'Observation and\nCamping Division',
     image: image1,
-    link: '#',
+    link: '/about#observation-camping',
   },
   {
     id: 2,
     title: 'Data Analysis and\nSoftware Division',
     image: image2,
-    link: '#',
+    link: '/about#data-analysis-software',
   },
   {
     id: 3,
     title: 'Robotics and\nRover Division',
     image: image3,
-    link: '#',
+    link: '/about#robotics-rover',
   },
   {
     id: 4,
     title: 'Biotechnical\nDivision',
     image: image4,
-    link: '#',
+    link: '/about#biotechnical',
   },
 ];
 
@@ -40,6 +41,7 @@ const Divisions = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
 
   useEffect(() => {
     // 1. Title Letter Reveal
@@ -163,9 +165,20 @@ const Divisions = () => {
       </div>
 
       {/* Horizontal Marquee Container */}
-      <div className="w-full max-w-[1600px] mx-auto pb-10 relative z-10 px-4 overflow-hidden group/marquee">
-        {/* Scroll Track */}
-        <div className="flex flex-row gap-6 w-max animate-[horizontal-marquee_30s_linear_infinite] group-hover/marquee:[animation-play-state:paused]">
+      <div
+        className="w-full max-w-[1600px] mx-auto pb-10 relative z-10 px-4 overflow-hidden group/marquee"
+        onTouchStart={() => setIsMarqueePaused(true)}
+        onTouchEnd={() => {
+          // Keep paused briefly so the Read More tap can register on mobile
+          window.setTimeout(() => setIsMarqueePaused(false), 500);
+        }}
+        onTouchCancel={() => setIsMarqueePaused(false)}
+      >
+        {/* Scroll Track — pauses on hover (desktop) and while touching (mobile) */}
+        <div
+          className="flex flex-row gap-6 w-max animate-[horizontal-marquee_30s_linear_infinite] group-hover/marquee:[animation-play-state:paused]"
+          style={{ animationPlayState: isMarqueePaused ? 'paused' : undefined }}
+        >
           {/* Duplicated list for infinite seamless loop */}
           {[...divisionsData, ...divisionsData].map((division, idx) => (
             <div key={`${division.id}-${idx}`} className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 px-2 py-4">
@@ -180,21 +193,22 @@ const Divisions = () => {
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80 pointer-events-none group-hover:from-black/35 group-hover:to-black/70 transition-colors duration-500 z-10" />
 
-                <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between" style={{ zIndex: 15 }}>
+                <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between" style={{ zIndex: 15 }}>
                   <h3
-                    className="text-2xl md:text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight group-hover:text-glow transition-all duration-500"
+                    className="text-xl sm:text-2xl md:text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight group-hover:text-glow transition-all duration-500"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}
                   >
                     {division.title}
                   </h3>
                   <div className="mt-auto">
-                    <a
-                      href={division.link}
-                      className="inline-flex items-center justify-center px-7 py-2 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+                    <Link
+                      to={division.link}
+                      onClick={(e) => e.stopPropagation()}
+                      className="relative z-20 inline-flex items-center justify-center min-h-11 px-6 sm:px-7 py-2.5 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)] touch-manipulation"
                       style={{ fontFamily: "'Rajdhani', sans-serif" }}
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
