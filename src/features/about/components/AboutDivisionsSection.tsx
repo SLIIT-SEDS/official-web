@@ -70,7 +70,7 @@ const AboutDivisionsSection: React.FC = () => {
   }, [hash]);
 
   return (
-    <section className="w-full pb-32 px-6 md:px-20">
+    <section id="divisions" className="w-full pb-32 px-6 md:px-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* SECTION HEADER */}
         <div className="mb-16 md:mb-24">

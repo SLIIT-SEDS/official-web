@@ -1,16 +1,16 @@
-import chamodaImg from '@/board/Chamoda Suraweera.jpeg';
-import isinduImg from '@/board/Isindu Nethmika.jpeg';
-import kaveeshaImg from '@/board/Kaveesha Rahubadda.jpg';
+import chamodaImg from '@/board/Chamoda Suraweera.png';
+import isinduImg from '@/board/Isindu Nethmika.png';
+import kaveeshaImg from '@/board/Kaveesha Rahubadda.png';
 import chamikaImg from '@/board/Chamika Lakshan.png';
 import rashaadImg from '@/board/Rashaad.png';
 import kawanImg from '@/board/Kawan Rupasinghe.png';
 import yesenImg from '@/board/Yesen Binuwara.png';
-import nikiniImg from '@/board/Niki Bandara.jpg';
-import tharukaImg from '@/board/Tharuka Pathmasiri.jpg';
-import shageeshanImg from '@/board/Shageeshan Thamodharam.jpeg';
-import dilaraImg from '@/board/Dilara Liyanage.jpg';
-import gayathriImg from '@/board/Gayathri Priya.jpg';
-import sachinImg from '@/board/SACHIN WEERASOORIYA.jpeg';
+import nikiniImg from '@/board/Niki Bandara.png';
+import tharukaImg from '@/board/Tharuka Pathmasiri.png';
+import shageeshanImg from '@/board/Shageeshan Thamodharam.png';
+import dilaraImg from '@/board/Dilara Liyanage.png';
+import gayathriImg from '@/board/Gayathri Priya.png';
+import sachinImg from '@/board/SACHIN WEERASOORIYA.png';
 
 export interface BoardMember {
   id: string;
@@ -52,17 +52,12 @@ export const boardMembers: BoardMember[] = [
     role: 'Treasurer',
     image: rashaadImg,
   },
+  { id: '7', name: 'Yesen Binuwara', role: 'Project Manager', image: yesenImg },
   {
     id: '6',
     name: 'Kawan Rupasinghe',
     role: 'Division Manager',
     image: kawanImg,
-  },
-  {
-    id: '7',
-    name: 'Yesen Binuwara',
-    role: 'Project Manager',
-    image: yesenImg,
   },
   {
     id: '8',
