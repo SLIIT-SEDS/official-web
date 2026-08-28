@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { FaTwitter, FaLinkedin, FaTiktok } from "react-icons/fa";
+import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import logo from "@/assets/seds-logo.png";
-import { Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -45,23 +44,23 @@ const Footer = () => {
                 </h4>
                 <div className="flex gap-6 items-center justify-center md:justify-start">
                   <a
-                    href="https://www.facebook.com/SEDS.SLIIT"
+                    href="https://twitter.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
                   >
-                    <Facebook size={26} />
+                    <FaTwitter size={26} />
                   </a>
                   <a
-                    href="https://www.tiktok.com/@sliit.seds?_r=1&_t=ZS-9871f2ehypZ"
+                    href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
                   >
-                    <FaTiktok size={26} />
+                    <FaGithub size={26} />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/seds-sliit/?originalSubdomain=lk"
+                    href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -69,7 +68,7 @@ const Footer = () => {
                     <FaLinkedin size={26} />
                   </a>
                   <a
-                    href="https://www.instagram.com/sedssliit/"
+                    href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[#E0B6E4] transition-all"
@@ -82,11 +81,11 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center md:items-start md:justify-self-center">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Links
             </h4>
-            <ul className="flex flex-col items-center gap-2.5 mt-1">
+            <ul className="flex flex-col gap-2.5 mt-1">
               <li>
                 <Link
                   to="/"
@@ -103,6 +102,14 @@ const Footer = () => {
                   About
                 </Link>
               </li>
+              {/*<li>
+                <Link
+                  to="/blogs"
+                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
+                >
+                  Blogs
+                </Link>
+              </li>*/}
               <li>
                 <Link
                   to="/events"
@@ -119,28 +126,29 @@ const Footer = () => {
                   Board
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start md:justify-self-end lg:pr-12">
             <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
               Contact
             </h4>
-            <div className="mb-3">
-              <a
-                href="mailto:sliitseds@gmail.com"
-                className="text-[#b8b4be] hover:text-[#e5e1e8] transition-colors"
-              >
-                sliitseds@gmail.com
-              </a>
-            </div>
             <ul className="flex flex-col gap-1 text-[#b8b4be] font-light text-[15px] leading-snug">
               <li>SLIIT Malabe Campus</li>
               <li>New Kandy Road</li>
               <li>Malabe, Sri Lanka</li>
             </ul>
           </div>
+
         </div>
 
         <div className="pt-12 flex justify-center items-center">
