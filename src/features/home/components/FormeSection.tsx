@@ -235,7 +235,7 @@ const FormeSection = () => {
               className="join-button mt-6 w-full rounded-xl bg-white py-4 text-[12px] font-bold uppercase tracking-[0.25em] text-[#090709] transition-all duration-500 hover:bg-gray-50 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
               style={{ fontFamily: "'Rajdhani', sans-serif" }}
             >
-              {isSubmitting ? 'SUBMITTING...' : 'JOIN THE MISSION'}
+              {isSubmitting ? 'SUBMITTING...' : 'SEND'}
             </button>
           </form>
         </div>
