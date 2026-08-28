@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { processInquiry, type InquiryPayload } from './lib/processInquiry';
+import { processInquiry, type InquiryPayload } from './lib/processInquiry.js';
 
 function getClientIp(req: VercelRequest): string {
   const forwarded = req.headers['x-forwarded-for'];
