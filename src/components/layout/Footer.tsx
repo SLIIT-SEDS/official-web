@@ -102,14 +102,14 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-              <li>
+              {/*<li>
                 <Link
                   to="/blogs"
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
                 >
                   Blogs
                 </Link>
-              </li>
+              </li>*/}
               <li>
                 <Link
                   to="/events"
