@@ -4,6 +4,7 @@ import HomePage from '@/pages/home/HomePage';
 import AboutPage from '@/pages/about/AboutPage';
 import EventsPage from '@/pages/events/EventsPage';
 import BoardPage from '@/pages/board/BoardPage';
+import NotFoundPage from '@/pages/not-found/NotFoundPage';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
@@ -23,6 +24,7 @@ const App = () => (
         <Route path="/events" element={<EventsPage />} />
         <Route path="/board" element={<BoardPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

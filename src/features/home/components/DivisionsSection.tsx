@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -41,7 +41,110 @@ const Divisions = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  // Marquee state (bidirectional auto-slide + manual drag)
+  const offsetRef = useRef(0);
+  const wrapWidthRef = useRef(0);
+  const autoIdRef = useRef(0);
+  const isPointerDownRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const dragOccurredRef = useRef(false);
+  const pointerStartXRef = useRef(0);
+  const pointerStartOffsetRef = useRef(0);
+
+  const wrapOffset = useCallback((value: number) => {
+    const width = wrapWidthRef.current;
+    if (width <= 0) return value;
+    const wrapped = value % width;
+    return wrapped > 0 ? wrapped - width : wrapped;
+  }, []);
+
+  const applyTransform = useCallback(() => {
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translate3d(${offsetRef.current}px, 0, 0)`;
+    }
+  }, []);
+
+  // Continuous auto-slide loop (runs whenever the user isn't dragging)
+  useEffect(() => {
+    let lastTime: number | null = null;
+    const tick = (time: number) => {
+      if (lastTime === null) lastTime = time;
+      const dt = Math.min((time - lastTime) / 1000, 0.1);
+      lastTime = time;
+
+      const width = wrapWidthRef.current;
+      if (width > 0 && !isDraggingRef.current) {
+        offsetRef.current = wrapOffset(offsetRef.current - (width / 30) * dt);
+        applyTransform();
+      }
+      autoIdRef.current = requestAnimationFrame(tick);
+    };
+    autoIdRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(autoIdRef.current);
+  }, [applyTransform, wrapOffset]);
+
+  // Measure one duplicated copy so the loop wraps seamlessly
+  useEffect(() => {
+    const measure = () => {
+      if (trackRef.current) {
+        wrapWidthRef.current = trackRef.current.scrollWidth / 2;
+      }
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (trackRef.current) observer.observe(trackRef.current);
+    window.addEventListener('resize', measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, []);
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    isPointerDownRef.current = true;
+    dragOccurredRef.current = false;
+    pointerStartXRef.current = e.clientX;
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      /* noop */
+    }
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isPointerDownRef.current) return;
+    if (!isDraggingRef.current) {
+      if (Math.abs(e.clientX - pointerStartXRef.current) < 8) return;
+      isDraggingRef.current = true;
+      dragOccurredRef.current = true;
+      pointerStartOffsetRef.current = offsetRef.current;
+      pointerStartXRef.current = e.clientX;
+    }
+    offsetRef.current = wrapOffset(
+      pointerStartOffsetRef.current + (e.clientX - pointerStartXRef.current)
+    );
+    applyTransform();
+    e.preventDefault();
+  };
+
+  const stopDragging = () => {
+    isPointerDownRef.current = false;
+    isDraggingRef.current = false;
+  };
+
+  const handlePointerUp = () => stopDragging();
+  const handlePointerCancel = () => stopDragging();
+
+  const handleClickCapture = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (dragOccurredRef.current) {
+      dragOccurredRef.current = false;
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
 
   useEffect(() => {
     // 1. Title Letter Reveal
@@ -56,7 +159,8 @@ const Divisions = () => {
         titleRef.current?.appendChild(span);
       });
 
-      gsap.fromTo('.div-char',
+      gsap.fromTo(
+        '.div-char',
         { y: 30 },
         {
           opacity: 1,
@@ -99,7 +203,7 @@ const Divisions = () => {
           rotationX: 65,
           z: -300,
           y: 100,
-          opacity: 0.25
+          opacity: 0.25,
         },
         {
           rotationX: 45,
@@ -119,14 +223,14 @@ const Divisions = () => {
 
   return (
     <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center">
-
       {/* DYNAMIC CSS SHADE BACKGROUND */}
-      <div 
+      <div
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] rounded-full pointer-events-none z-0 mix-blend-screen"
         style={{
-          background: 'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
-          filter: 'blur(100px)'
-        }} 
+          background:
+            'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
+          filter: 'blur(100px)',
+        }}
       />
 
       {/* Cyber space grid matrix background */}
@@ -166,22 +270,24 @@ const Divisions = () => {
 
       {/* Horizontal Marquee Container */}
       <div
-        className="w-full max-w-[1600px] mx-auto pb-10 relative z-10 px-4 overflow-hidden group/marquee"
-        onTouchStart={() => setIsMarqueePaused(true)}
-        onTouchEnd={() => {
-          // Keep paused briefly so the Read More tap can register on mobile
-          window.setTimeout(() => setIsMarqueePaused(false), 500);
-        }}
-        onTouchCancel={() => setIsMarqueePaused(false)}
+        className="w-full max-w-[1600px] mx-auto pb-10 relative z-10 px-4 overflow-hidden cursor-grab active:cursor-grabbing touch-pan-y select-none"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerCancel}
+        onClickCapture={handleClickCapture}
       >
-        {/* Scroll Track — pauses on hover (desktop) and while touching (mobile) */}
+        {/* Scroll Track — auto-slides when not dragged, draggable both directions */}
         <div
-          className="flex flex-row gap-6 w-max animate-[horizontal-marquee_30s_linear_infinite] group-hover/marquee:[animation-play-state:paused]"
-          style={{ animationPlayState: isMarqueePaused ? 'paused' : undefined }}
+          ref={trackRef}
+          className="flex flex-row gap-6 w-max will-change-transform"
         >
           {/* Duplicated list for infinite seamless loop */}
           {[...divisionsData, ...divisionsData].map((division, idx) => (
-            <div key={`${division.id}-${idx}`} className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 px-2 py-4">
+            <div
+              key={`${division.id}-${idx}`}
+              className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 px-2 py-4"
+            >
               <div
                 className="division-glow-card relative rounded-[1.8rem] md:rounded-[2.5rem] overflow-hidden group border border-white/5 w-full h-[320px] sm:h-[360px] md:h-[380px] transition-all duration-500 backdrop-blur-md"
                 style={{
@@ -193,7 +299,10 @@ const Divisions = () => {
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80 pointer-events-none group-hover:from-black/35 group-hover:to-black/70 transition-colors duration-500 z-10" />
 
-                <div className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between" style={{ zIndex: 15 }}>
+                <div
+                  className="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between"
+                  style={{ zIndex: 15 }}
+                >
                   <h3
                     className="text-xl sm:text-2xl md:text-3xl text-white font-light tracking-wide whitespace-pre-line leading-tight group-hover:text-glow transition-all duration-500"
                     style={{ fontFamily: "'Rajdhani', sans-serif" }}
@@ -220,15 +329,6 @@ const Divisions = () => {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        @keyframes horizontal-marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
         .division-glow-card:hover {
           transform: translateY(-8px) scale(1.01);
           box-shadow: 0 25px 50px rgba(224, 182, 228, 0.08);
