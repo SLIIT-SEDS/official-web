@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
-import logo from "@/assets/seds-logo.png";
+import { Link } from 'react-router-dom';
+import { FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa6';
+import { AiFillInstagram } from 'react-icons/ai';
+import logo from '@/assets/seds-logo.png';
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+};
 
 const Footer = () => {
   return (
@@ -16,27 +20,29 @@ const Footer = () => {
             left: '50%',
             bottom: 0,
             transform: 'translate(-50%, 50%)',
-            background: 'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
-            filter: 'blur(150px)'
+            background:
+              'radial-gradient(circle, rgba(224,182,228,0.25) 0%, rgba(224,182,228,0) 70%)',
+            filter: 'blur(150px)',
           }}
         />
       </div>
 
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-start text-center md:text-left">
-
           {/* Logo & Description */}
           <div className="flex flex-col items-center md:items-start md:flex-row gap-4 sm:gap-6 lg:-ml-4">
-            <Link to="/" className="shrink-0 -mt-1">
+            <Link to="/" onClick={scrollToTop} className="shrink-0 -mt-1">
               <img
                 src={logo}
                 alt="SEDS Logo"
-                style={{ width: "78px", height: "78px", borderRadius: "39px" }}
+                style={{ width: '78px', height: '78px', borderRadius: '39px' }}
               />
             </Link>
             <div className="flex flex-col gap-4 items-center md:items-start">
               <p className="text-[#d4d0d8] font-semibold text-[15px] leading-relaxed tracking-normal max-w-md">
-                Welcome to SEDS SLIIT a student-led space organization at Sri Lanka Institute of Information Technology, empowering students to explore, build, and innovate beyond the classroom.
+                Welcome to SEDS SLIIT a student-led space organization at Sri
+                Lanka Institute of Information Technology, empowering students
+                to explore, build, and innovate beyond the classroom.
               </p>
               <div className="mt-8 sm:mt-12 md:mt-16">
                 <h4 className="text-[#e5e1e8] font-normal text-2xl tracking-tight mb-5">
@@ -89,6 +95,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
+                  onClick={scrollToTop}
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
                 >
                   Home
@@ -97,6 +104,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/about"
+                  onClick={scrollToTop}
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
                 >
                   About
@@ -113,6 +121,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/events"
+                  onClick={scrollToTop}
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
                 >
                   Events
@@ -121,17 +130,10 @@ const Footer = () => {
               <li>
                 <Link
                   to="/board"
+                  onClick={scrollToTop}
                   className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
                 >
                   Board
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Contact
                 </Link>
               </li>
             </ul>
@@ -148,12 +150,12 @@ const Footer = () => {
               <li>Malabe, Sri Lanka</li>
             </ul>
           </div>
-
         </div>
 
         <div className="pt-12 flex justify-center items-center">
           <p className="text-white/60 text-sm font-light">
-            Copyright © {new Date().getFullYear()} | All Rights Reserved SEDS SLIIT.
+            Copyright © {new Date().getFullYear()} | All Rights Reserved SEDS
+            SLIIT.
           </p>
         </div>
       </div>
