@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/seds-logo.png';
 
@@ -8,6 +8,19 @@ const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 1024);
   const menuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactUs = () => {
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      document
+        .getElementById('get-in-touch')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      navigate('/', { state: { scrollTo: 'get-in-touch' } });
+    }
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -76,6 +89,14 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <button
+            type="button"
+            onClick={handleContactUs}
+            className="relative z-20 inline-flex items-center justify-center min-h-11 px-6 py-2.5 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            Contact Us
+          </button>
         </nav>
       )}
 
@@ -138,6 +159,14 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <button
+            type="button"
+            onClick={handleContactUs}
+            className="mt-4 inline-flex items-center justify-center min-h-11 px-8 py-3 bg-white text-[#090709] text-sm font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            Contact Us
+          </button>
         </nav>
       </div>
     </header>

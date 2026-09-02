@@ -104,6 +104,10 @@ const Divisions = () => {
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
+    // Don't hijack drags that start on an interactive link (e.g. "Read More"),
+    // so clicks navigate reliably on both desktop and mobile.
+    const target = e.target as HTMLElement;
+    if (target.closest('a[href]')) return;
     isPointerDownRef.current = true;
     dragOccurredRef.current = false;
     pointerStartXRef.current = e.clientX;
@@ -141,6 +145,10 @@ const Divisions = () => {
   const handleClickCapture = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dragOccurredRef.current) {
       dragOccurredRef.current = false;
+      // Don't swallow clicks on links (e.g. "Read More") even if a tiny
+      // drag was registered, so navigation works reliably on desktop.
+      const target = e.target as HTMLElement;
+      if (target.closest('a[href]')) return;
       e.preventDefault();
       e.stopPropagation();
     }
