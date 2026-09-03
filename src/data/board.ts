@@ -36,15 +36,16 @@ export const boardMembers: BoardMember[] = [
   },
   {
     id: '3',
-    name: 'Kaveesha Rahubadda',
-    role: 'Secretary',
-    image: kaveeshaImg,
-  },
-  {
-    id: '4',
     name: 'Chamika Lakshan',
     role: 'Vice President',
     image: chamikaImg,
+  },
+  {
+    id: '4',
+    name: 'Kaveesha Rahubadda',
+    role: 'Secretary',
+    image: kaveeshaImg,
+
   },
   {
     id: '5',

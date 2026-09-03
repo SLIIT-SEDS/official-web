@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useLocation, BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import PageTransition from '@/components/layout/PageTransition';
 import HomePage from '@/pages/home/HomePage';
 import AboutPage from '@/pages/about/AboutPage';
 import EventsPage from '@/pages/events/EventsPage';
@@ -12,20 +14,64 @@ import SmoothScroll from '@/components/layout/SmoothScroll';
 
 const queryClient = new QueryClient();
 
+const AppRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageTransition>
+              <HomePage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageTransition>
+              <AboutPage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <PageTransition>
+              <EventsPage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/board"
+          element={
+            <PageTransition>
+              <BoardPage />
+            </PageTransition>
+          }
+        />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route
+          path="*"
+          element={
+            <PageTransition>
+              <NotFoundPage />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       {/* <SmoothScroll /> */}
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/events" element={<EventsPage />} />
-        <Route path="/board" element={<BoardPage />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <AppRoutes />
       <Footer />
     </BrowserRouter>
   </QueryClientProvider>

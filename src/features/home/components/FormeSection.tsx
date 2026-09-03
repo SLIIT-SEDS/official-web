@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,6 +13,7 @@ type FormStatus = {
 const INQUIRY_API_URL = '/api/inquiry';
 
 const FormeSection = () => {
+  const { state } = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const formCardRef = useRef<HTMLDivElement>(null);
@@ -19,6 +21,21 @@ const FormeSection = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<FormStatus | null>(null);
+
+  // Scroll to the form when arriving via navbar "Contact Us" (no URL hash)
+  useEffect(() => {
+    if (state?.scrollTo !== 'get-in-touch') return;
+    const scrollToForm = () => {
+      if (containerRef.current) {
+        containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    scrollToForm();
+    const timeouts = [100, 300, 600].map((delay) =>
+      window.setTimeout(scrollToForm, delay)
+    );
+    return () => timeouts.forEach(clearTimeout);
+  }, [state?.scrollTo]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -111,8 +128,9 @@ const FormeSection = () => {
 
   return (
     <section
+      id="get-in-touch"
       ref={containerRef}
-      className="relative w-full py-12 md:py-28 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent"
+      className="relative w-full py-12 md:py-28 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-transparent scroll-mt-24"
     >
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
         <div
@@ -141,7 +159,7 @@ const FormeSection = () => {
             className="mb-10 text-center font-light text-white tracking-wide select-none"
             style={{ fontSize: '2.2rem', fontFamily: "'Rajdhani', sans-serif" }}
           >
-            Apply Now!
+            Get in Touch!
           </h3>
 
           <form
