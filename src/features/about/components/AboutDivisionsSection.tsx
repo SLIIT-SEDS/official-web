@@ -57,7 +57,7 @@ const AboutDivisionsSection: React.FC = () => {
       if (!el) return false;
       // Lenis controls scrolling, so drive it through the global instance if
       // present; otherwise fall back to native scrollIntoView.
-      const lenis = (window as any).__lenis;
+      const lenis = window.__lenis;
       if (lenis) {
         lenis.scrollTo(el, { offset: -100, duration: 1.2 });
       } else {

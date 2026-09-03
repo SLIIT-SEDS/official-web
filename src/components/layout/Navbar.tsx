@@ -92,10 +92,40 @@ const Navbar = () => {
           <button
             type="button"
             onClick={handleContactUs}
-            className="relative z-20 inline-flex items-center justify-center min-h-11 px-6 py-2.5 bg-transparent text-white hover:text-white border border-white/10 hover:border-[#E0B6E4]/50 rounded-full transition-all duration-300 backdrop-blur-sm text-sm md:text-base font-light tracking-wide hover:shadow-[0_0_15px_rgba(224,182,228,0.2)]"
+            className="group relative z-20 inline-flex items-center justify-center p-[1px] rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E0B6E4] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             style={{ fontFamily: "'Rajdhani', sans-serif" }}
           >
-            Contact Us
+            {/* Ambient Cosmic Aura Glow */}
+            <span
+              className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#E0B6E4] via-[#b682bf] to-[#705B72] opacity-0 group-hover:opacity-60 blur-md transition-opacity duration-500 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Gradient Border Frame */}
+            <span
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-[#E0B6E4]/45 via-white/20 to-[#E0B6E4]/45 group-hover:from-[#E0B6E4] group-hover:via-white/80 group-hover:to-[#E0B6E4] transition-all duration-500"
+              aria-hidden="true"
+            />
+
+            {/* Glass Surface Interior */}
+            <span className="relative z-10 inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#0a070c]/90 group-hover:bg-[#140c1a]/90 backdrop-blur-md transition-all duration-300 overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+              {/* Glass Top Specular Arc */}
+              <span
+                className="absolute top-0 inset-x-3 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Diagonal Shimmer Glint Sweep */}
+              <span
+                className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Button Label */}
+              <span className="text-white text-base font-semibold tracking-wider transition-colors duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_10px_rgba(224,182,228,0.7)]">
+                Contact Us
+              </span>
+            </span>
           </button>
         </nav>
       )}
@@ -162,10 +192,40 @@ const Navbar = () => {
           <button
             type="button"
             onClick={handleContactUs}
-            className="mt-4 inline-flex items-center justify-center min-h-11 px-8 py-3 bg-white text-[#090709] text-sm font-bold uppercase tracking-widest rounded-full transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]"
+            className="group relative mt-6 inline-flex items-center justify-center p-[1px] rounded-full transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E0B6E4]"
             style={{ fontFamily: "'Rajdhani', sans-serif" }}
           >
-            Contact Us
+            {/* Ambient Cosmic Aura Glow */}
+            <span
+              className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#E0B6E4]/50 via-[#a773ad]/40 to-[#705B72]/50 opacity-60 group-hover:opacity-100 blur-lg transition-opacity duration-500 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Gradient Border Ring */}
+            <span
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-[#E0B6E4]/70 via-white/40 to-[#E0B6E4]/70 group-hover:from-[#E0B6E4] group-hover:via-white/80 group-hover:to-[#E0B6E4] transition-all duration-500"
+              aria-hidden="true"
+            />
+
+            {/* Glass Surface Interior */}
+            <span className="relative z-10 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#0d0913]/90 group-hover:bg-[#180f24]/95 backdrop-blur-xl transition-all duration-300 overflow-hidden shadow-[0_0_25px_rgba(224,182,228,0.2)]">
+              {/* Top Specular Light Line */}
+              <span
+                className="absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Shimmer Light Sweep */}
+              <span
+                className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Button Label */}
+              <span className="text-white text-base sm:text-lg font-semibold tracking-widest uppercase transition-colors duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_12px_rgba(224,182,228,0.8)]">
+                Contact Us
+              </span>
+            </span>
           </button>
         </nav>
       </div>
