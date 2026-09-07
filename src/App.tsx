@@ -8,6 +8,8 @@ import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import { preloadImages } from '@/lib/preload';
+import { eventsData } from '@/data/events';
+import { boardMembers } from '@/data/board';
 
 const HomePage = lazy(() => import('@/pages/home/HomePage'));
 const AboutPage = lazy(() => import('@/pages/about/AboutPage'));
@@ -16,6 +18,12 @@ const BoardPage = lazy(() => import('@/pages/board/BoardPage'));
 const NotFoundPage = lazy(() => import('@/pages/not-found/NotFoundPage'));
 
 const queryClient = new QueryClient();
+
+const preloadSources = [
+  '/eventBG.png',
+  ...eventsData.map((e) => e.image),
+  ...boardMembers.map((m) => m.image),
+];
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-[#090709]">
@@ -83,7 +91,7 @@ const AppRoutes = () => {
 
 const App = () => {
   useEffect(() => {
-    preloadImages(['/eventBG.png']);
+    preloadImages(preloadSources);
   }, []);
 
   return (

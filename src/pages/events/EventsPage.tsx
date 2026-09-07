@@ -1,6 +1,10 @@
 import EventsList from '@/features/events/components/EventsList';
+import { eventsData } from '@/data/events';
+import { usePreloadImages } from '@/hooks/usePreloadImages';
 
 const EventsPage = () => {
+  usePreloadImages(['/eventBG.png', ...eventsData.map((e) => e.image)]);
+
   return (
     <div className="min-h-screen pt-24 pb-20 relative flex flex-col items-center justify-start bg-[#090709]">
       {/* Full Page Background Image */}
