@@ -71,6 +71,8 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="SEDS Logo"
+                loading="lazy"
+                decoding="async"
                 style={{ width: '78px', height: '78px', borderRadius: '39px' }}
               />
             </Link>
