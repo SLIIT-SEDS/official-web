@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/seds-logo.png';
 
@@ -8,6 +8,19 @@ const Navbar = () => {
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 1024);
   const menuRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleContactUs = () => {
+    setIsOpen(false);
+    if (location.pathname === '/') {
+      document
+        .getElementById('get-in-touch')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      navigate('/', { state: { scrollTo: 'get-in-touch' } });
+    }
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -76,6 +89,44 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <button
+            type="button"
+            onClick={handleContactUs}
+            className="group relative z-20 inline-flex items-center justify-center p-[1px] rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E0B6E4] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            {/* Ambient Cosmic Aura Glow */}
+            <span
+              className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#E0B6E4] via-[#b682bf] to-[#705B72] opacity-0 group-hover:opacity-60 blur-md transition-opacity duration-500 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Gradient Border Frame */}
+            <span
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-[#E0B6E4]/45 via-white/20 to-[#E0B6E4]/45 group-hover:from-[#E0B6E4] group-hover:via-white/80 group-hover:to-[#E0B6E4] transition-all duration-500"
+              aria-hidden="true"
+            />
+
+            {/* Glass Surface Interior */}
+            <span className="relative z-10 inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#0a070c]/90 group-hover:bg-[#140c1a]/90 backdrop-blur-md transition-all duration-300 overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+              {/* Glass Top Specular Arc */}
+              <span
+                className="absolute top-0 inset-x-3 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Diagonal Shimmer Glint Sweep */}
+              <span
+                className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Button Label */}
+              <span className="text-white text-base font-semibold tracking-wider transition-colors duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_10px_rgba(224,182,228,0.7)]">
+                Contact Us
+              </span>
+            </span>
+          </button>
         </nav>
       )}
 
@@ -138,6 +189,44 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
+          <button
+            type="button"
+            onClick={handleContactUs}
+            className="group relative mt-6 inline-flex items-center justify-center p-[1px] rounded-full transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E0B6E4]"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            {/* Ambient Cosmic Aura Glow */}
+            <span
+              className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#E0B6E4]/50 via-[#a773ad]/40 to-[#705B72]/50 opacity-60 group-hover:opacity-100 blur-lg transition-opacity duration-500 pointer-events-none"
+              aria-hidden="true"
+            />
+
+            {/* Gradient Border Ring */}
+            <span
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-[#E0B6E4]/70 via-white/40 to-[#E0B6E4]/70 group-hover:from-[#E0B6E4] group-hover:via-white/80 group-hover:to-[#E0B6E4] transition-all duration-500"
+              aria-hidden="true"
+            />
+
+            {/* Glass Surface Interior */}
+            <span className="relative z-10 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#0d0913]/90 group-hover:bg-[#180f24]/95 backdrop-blur-xl transition-all duration-300 overflow-hidden shadow-[0_0_25px_rgba(224,182,228,0.2)]">
+              {/* Top Specular Light Line */}
+              <span
+                className="absolute top-0 inset-x-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Shimmer Light Sweep */}
+              <span
+                className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Button Label */}
+              <span className="text-white text-base sm:text-lg font-semibold tracking-widest uppercase transition-colors duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_12px_rgba(224,182,228,0.8)]">
+                Contact Us
+              </span>
+            </span>
+          </button>
         </nav>
       </div>
     </header>

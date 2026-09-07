@@ -1,12 +1,48 @@
 import { Link } from 'react-router-dom';
-import { FaTwitter, FaLinkedin } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa6';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
 import logo from '@/assets/seds-logo.png';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 };
+
+const navLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Events', to: '/events' },
+  { label: 'Board', to: '/board' },
+];
+
+const socialLinks = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/SEDS.SLIIT/',
+    icon: FaFacebook,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/sedssliit/',
+    icon: AiFillInstagram,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/seds-sliit/posts/?feedView=all',
+    icon: FaLinkedin,
+  },
+];
+
+const socialIconClass =
+  'text-white hover:text-[#E0B6E4] transition-all';
+
+const linkClass =
+  'text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors';
+
+const SectionHeading = ({ children }: { children: React.ReactNode }) => (
+  <h4 className="text-[#e5e1e8] font-normal text-2xl mb-6 tracking-tight">
+    {children}
+  </h4>
+);
 
 const Footer = () => {
   return (
@@ -28,123 +64,60 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-start text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
           {/* Logo & Description */}
-          <div className="flex flex-col items-center md:items-start md:flex-row gap-4 sm:gap-6 lg:-ml-4">
-            <Link to="/" onClick={scrollToTop} className="shrink-0 -mt-1">
+          <div className="flex flex-col gap-4 items-center md:items-start">
+            <Link to="/" onClick={scrollToTop} className="shrink-0">
               <img
                 src={logo}
                 alt="SEDS Logo"
                 style={{ width: '78px', height: '78px', borderRadius: '39px' }}
               />
             </Link>
-            <div className="flex flex-col gap-4 items-center md:items-start">
-              <p className="text-[#d4d0d8] font-semibold text-[15px] leading-relaxed tracking-normal max-w-md">
-                Welcome to SEDS SLIIT a student-led space organization at Sri
-                Lanka Institute of Information Technology, empowering students
-                to explore, build, and innovate beyond the classroom.
-              </p>
-              <div className="mt-8 sm:mt-12 md:mt-16">
-                <h4 className="text-[#e5e1e8] font-normal text-2xl tracking-tight mb-5">
-                  Follow Us on Socials!
-                </h4>
-                <div className="flex gap-6 items-center justify-center md:justify-start">
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-[#E0B6E4] transition-all"
-                  >
-                    <FaTwitter size={26} />
-                  </a>
-                  <a
-                    href="https://github.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-[#E0B6E4] transition-all"
-                  >
-                    <FaGithub size={26} />
-                  </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-[#E0B6E4] transition-all"
-                  >
-                    <FaLinkedin size={26} />
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-[#E0B6E4] transition-all"
-                  >
-                    <AiFillInstagram size={26} />
-                  </a>
-                </div>
-              </div>
-            </div>
+            <p className="text-[#d4d0d8] font-semibold text-[15px] leading-relaxed tracking-normal max-w-md text-center md:text-left">
+              Welcome to SEDS SLIIT, A student-led space organization at Sri
+              Lanka Institute of Information Technology, empowering students to
+              explore, build, and innovate beyond the classroom.
+            </p>
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start md:justify-self-center">
-            <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
-              Links
-            </h4>
-            <ul className="flex flex-col gap-2.5 mt-1">
-              <li>
-                <Link
-                  to="/"
-                  onClick={scrollToTop}
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  onClick={scrollToTop}
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              {/*<li>
-                <Link
-                  to="/blogs"
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Blogs
-                </Link>
-              </li>*/}
-              <li>
-                <Link
-                  to="/events"
-                  onClick={scrollToTop}
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/board"
-                  onClick={scrollToTop}
-                  className="text-[#b8b4be] hover:text-[#e5e1e8] font-normal text-base transition-colors"
-                >
-                  Board
-                </Link>
-              </li>
+            <SectionHeading>Links</SectionHeading>
+            <ul className="flex flex-col gap-2.5">
+              {navLinks.map(({ label, to }) => (
+                <li key={to}>
+                  <Link to={to} onClick={scrollToTop} className={linkClass}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Follow Us */}
+          <div className="flex flex-col items-center md:items-start md:justify-self-center">
+            <SectionHeading>Follow Us</SectionHeading>
+            <div className="flex gap-6 items-center justify-center md:justify-start">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={socialIconClass}
+                >
+                  <Icon size={26} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Contact */}
           <div className="flex flex-col items-center md:items-start md:justify-self-end lg:pr-12">
-            <h4 className="text-[#e5e1e8] font-normal text-2xl mb-8 tracking-tight">
-              Contact
-            </h4>
-            <ul className="flex flex-col gap-1 text-[#b8b4be] font-light text-[15px] leading-snug">
+            <SectionHeading>Contact</SectionHeading>
+            <ul className="flex flex-col gap-1 text-[#b8b4be] font-light text-[15px] leading-snug text-center md:text-left">
               <li>SLIIT Malabe Campus</li>
               <li>New Kandy Road</li>
               <li>Malabe, Sri Lanka</li>

@@ -110,7 +110,7 @@ const AstronautSVG: React.FC<AstronautSVGProps> = ({
     y="0px"
     width="100%"
     viewBox="0 0 1080 788"
-    // @ts-ignore — legacy SVG 1.1 attr not in React's type defs
+    // @ts-expect-error — legacy SVG 1.1 attr not in React's type defs
     enableBackground="new 0 0 1080 788"
     xmlSpace="preserve"
     role="img"
