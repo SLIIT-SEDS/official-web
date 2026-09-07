@@ -22,19 +22,39 @@ const FormeSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<FormStatus | null>(null);
 
-  // Scroll to the form when arriving via navbar "Contact Us" (no URL hash)
+  // Scroll to the form when arriving via navbar "Contact Us" (no URL hash).
+  // Waits for the page enter transition to finish so the smooth scroll doesn't
+  // fight the animated page transform, and retries only if the target is missed.
   useEffect(() => {
     if (state?.scrollTo !== 'get-in-touch') return;
+
+    let cancelled = false;
+
     const scrollToForm = () => {
-      if (containerRef.current) {
-        containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
-    scrollToForm();
-    const timeouts = [100, 300, 600].map((delay) =>
-      window.setTimeout(scrollToForm, delay)
-    );
-    return () => timeouts.forEach(clearTimeout);
+
+    const inPlace = () => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      return !!rect && rect.top >= 0 && rect.top <= window.innerHeight * 0.5;
+    };
+
+    // First attempt after the route enter animation (~450ms) has completed.
+    const first = window.setTimeout(() => {
+      if (!cancelled) scrollToForm();
+    }, 800);
+
+    // Guarded retry: only re-scroll if we genuinely missed the section.
+    const retry = window.setTimeout(() => {
+      if (cancelled || inPlace()) return;
+      scrollToForm();
+    }, 1500);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(first);
+      clearTimeout(retry);
+    };
   }, [state?.scrollTo]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -73,11 +73,13 @@ const EventsList = () => {
                         >
                           {/* Image Wrapper */}
                           <div className="w-full aspect-[4/3] relative rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden mb-5 sm:mb-6 shrink-0">
-                            <img
-                              src={event.image}
-                              alt={`${event.category} ${event.title}`}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            />
+<img
+                    src={event.image}
+                    alt={`${event.category} ${event.title}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                           </div>
 
                           {/* Info */}
@@ -137,11 +139,12 @@ const EventsList = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                   {/* Left Side: Large Image */}
                   <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden shrink-0 border border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-                    <img
-                      src={expandedEvent.image}
-                      alt={`${expandedEvent.category} ${expandedEvent.title}`}
-                      className="w-full h-full object-cover"
-                    />
+<img
+                    src={expandedEvent.image}
+                    alt={`${expandedEvent.category} ${expandedEvent.title}`}
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
                   </div>
 
                   {/* Right Side: Details */}

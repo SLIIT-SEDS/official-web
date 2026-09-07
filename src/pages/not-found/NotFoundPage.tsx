@@ -28,6 +28,7 @@ const NotFoundPage = () => {
             <img
               src="/shade.png"
               alt="shade background glow"
+              decoding="async"
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[400px] sm:w-[700px] md:w-[900px] lg:w-[1100px] max-w-none opacity-60 pointer-events-none select-none mix-blend-screen"
             />
             404 — Lost in Space!

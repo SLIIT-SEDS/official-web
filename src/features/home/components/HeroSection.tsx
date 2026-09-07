@@ -16,6 +16,7 @@ const HeroSection = () => {
               <img
                 src="/shade.png"
                 alt="shade background glow"
+                decoding="async"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[300px] sm:w-[500px] md:w-[700px] lg:w-[900px] max-w-none opacity-60 pointer-events-none select-none mix-blend-screen"
               />
               SEDS
@@ -45,6 +46,8 @@ const HeroSection = () => {
             <img
               src={astronomyImg}
               alt="Astronaut Background"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-auto object-contain scale-110 lg:scale-125 origin-center lg:origin-right"
             />
           </div>
