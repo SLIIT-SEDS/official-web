@@ -11,6 +11,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 import SmoothScroll from '@/components/layout/SmoothScroll';
+import ImagePreloader from '@/components/layout/ImagePreloader';
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,7 @@ const App = () => (
     <BrowserRouter>
       {/* <SmoothScroll /> */}
       <ScrollToTop />
+      <ImagePreloader />
       <Navbar />
       <AppRoutes />
       <Footer />
