@@ -11,8 +11,17 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/layout/ScrollToTop';
 import SmoothScroll from '@/components/layout/SmoothScroll';
+import { eventsData } from '@/data/events';
+import { boardMembers } from '@/data/board';
+import { usePreloadImages } from '@/hooks/usePreloadImages';
 
 const queryClient = new QueryClient();
+
+const preloadSources = [
+  '/eventBG.png',
+  ...eventsData.map((e) => e.image),
+  ...boardMembers.map((m) => m.image),
+];
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -65,16 +74,20 @@ const AppRoutes = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      {/* <SmoothScroll /> */}
-      <ScrollToTop />
-      <Navbar />
-      <AppRoutes />
-      <Footer />
-    </BrowserRouter>
-  </QueryClientProvider>
-);
+const App = () => {
+  usePreloadImages(preloadSources);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        {/* <SmoothScroll /> */}
+        <ScrollToTop />
+        <Navbar />
+        <AppRoutes />
+        <Footer />
+      </BrowserRouter>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
