@@ -44,6 +44,8 @@ const AboutIntroSection: React.FC = () => {
             <img
               src={planets}
               alt="planet stack"
+              loading="lazy"
+              decoding="async"
               className="
                 w-[280px] sm:w-[350px] md:w-[480px] object-contain
                 md:-mt-20

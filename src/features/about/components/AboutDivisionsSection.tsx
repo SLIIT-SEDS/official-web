@@ -105,6 +105,8 @@ const AboutDivisionsSection: React.FC = () => {
                   <img
                     src={division.image}
                     alt={division.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full aspect-square md:aspect-[4/3] object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
                   />
                   {/* Subtle purple-hued dark overlay */}

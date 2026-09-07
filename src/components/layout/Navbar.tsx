@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { preloadEvents, preloadBoard } from '@/lib/preload';
 import logo from '@/assets/seds-logo.png';
+
+const preloadForRoute = (path: string) => {
+  if (path === '/events') preloadEvents();
+  if (path === '/board') preloadBoard();
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,6 +77,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="SEDS Logo"
+          decoding="async"
           className="w-[44px] sm:w-[54px] md:w-[70px] h-auto rounded-full transition-transform hover:scale-105 object-contain"
         />
       </Link>
@@ -82,6 +89,7 @@ const Navbar = () => {
             <NavLink
               key={item.path}
               to={item.path}
+              onMouseEnter={() => preloadForRoute(item.path)}
               className={({ isActive }) =>
                 `nav-link relative flex flex-col items-center ${isActive ? 'active' : ''}`
               }
@@ -173,6 +181,7 @@ const Navbar = () => {
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
+              onMouseEnter={() => preloadForRoute(item.path)}
               style={{
                 transitionDelay: isOpen ? `${index * 65}ms` : '0ms',
               }}
