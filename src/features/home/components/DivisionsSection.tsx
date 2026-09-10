@@ -230,7 +230,7 @@ const Divisions = () => {
   }, []);
 
   return (
-    <section className="divisions-section relative z-20 py-16 md:py-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center">
+    <section className="divisions-section relative z-20 pt-0 pb-16 md:pb-28 px-4 md:px-12 lg:px-20 bg-transparent flex flex-col items-center">
       {/* DYNAMIC CSS SHADE BACKGROUND */}
       <div
         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] rounded-full pointer-events-none z-0 mix-blend-screen"

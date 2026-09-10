@@ -171,7 +171,7 @@ const FormeSection = () => {
 
         <div
           ref={formCardRef}
-          className="w-full max-w-[500px] bg-[#0f0b14]/50 border border-white/5 rounded-[2.5rem] p-5 sm:p-10 md:p-12 backdrop-blur-md relative overflow-hidden opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/10 transition-colors duration-500"
+          className="w-full max-w-[650px] bg-[#0f0b14]/50 border border-white/5 rounded-[2.5rem] p-5 sm:p-10 md:p-12 backdrop-blur-md relative overflow-hidden opacity-0 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/10 transition-colors duration-500"
         >
           <div className="absolute top-0 inset-x-10 h-[1px] bg-gradient-to-r from-transparent via-[#E0B6E4]/40 to-transparent" />
 
@@ -199,7 +199,7 @@ const FormeSection = () => {
             <div className="flex flex-col gap-2 relative group">
               <label
                 htmlFor="name"
-                className="text-sm font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
+                className="text-sm font-light text-white pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
               >
                 Name
               </label>
@@ -219,7 +219,7 @@ const FormeSection = () => {
             <div className="flex flex-col gap-2 relative group">
               <label
                 htmlFor="email"
-                className="text-sm font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
+                className="text-sm font-light text-white pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
               >
                 Email
               </label>
@@ -239,7 +239,7 @@ const FormeSection = () => {
             <div className="flex flex-col gap-2 relative group">
               <label
                 htmlFor="message"
-                className="text-sm font-light text-gray-400 pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
+                className="text-sm font-light text-white pl-1 tracking-wider uppercase group-focus-within:text-[#E0B6E4] transition-colors duration-300"
               >
                 Your Inquiry
               </label>
