@@ -3,7 +3,7 @@ import planets from "@/assets/globals.svg";
 
 const AboutIntroSection: React.FC = () => {
   return (
-    <section id="about" className="w-full py-32 px-6 md:px-20">
+    <section id="about" className="w-full pt-32 pb-0 px-6 md:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-6 items-start relative">
 
@@ -44,6 +44,8 @@ const AboutIntroSection: React.FC = () => {
             <img
               src={planets}
               alt="planet stack"
+              loading="lazy"
+              decoding="async"
               className="
                 w-[280px] sm:w-[350px] md:w-[480px] object-contain
                 md:-mt-20

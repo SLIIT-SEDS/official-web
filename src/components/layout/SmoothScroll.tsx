@@ -20,6 +20,9 @@ const SmoothScroll = () => {
       infinite: false,
     });
 
+    // Expose the instance so other code (e.g. hash scroll) can drive it
+    window.__lenis = lenis;
+
     // Synchronize Lenis scrolling with GSAP ScrollTrigger updates
     lenis.on('scroll', ScrollTrigger.update);
 
@@ -33,6 +36,7 @@ const SmoothScroll = () => {
 
     // Clean up on component unmount
     return () => {
+      delete window.__lenis;
       lenis.destroy();
       gsap.ticker.remove((time) => {
         lenis.raf(time * 1000);

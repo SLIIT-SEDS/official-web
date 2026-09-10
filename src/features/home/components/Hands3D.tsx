@@ -88,6 +88,8 @@ const Hands3D = () => {
         <img
           src="/lefttransparent.png"
           alt="Human Hand (Left)"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain select-none pointer-events-none"
         />
       </motion.div>
@@ -100,6 +102,8 @@ const Hands3D = () => {
         <img
           src="/right.png"
           alt="Robotic Hand (Right)"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-contain select-none pointer-events-none"
         />
       </motion.div>

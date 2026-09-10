@@ -2,7 +2,7 @@ import HeroSection from '@/features/home/components/HeroSection';
 import AboutSection from '@/features/home/components/AboutSection';
 import Divisions from '@/features/home/components/DivisionsSection';
 import Hands3D from '@/features/home/components/Hands3D';
-import ApplyNowFormSection from '@/features/home/components/ApplyNowFormSection';
+import FormeSection from '@/features/home/components/FormeSection';
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
         <AboutSection />
         <Divisions />
         <Hands3D />
-        <ApplyNowFormSection />
+        <FormeSection />
       </div>
     </main>
   );

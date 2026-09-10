@@ -76,6 +76,8 @@ const EventsList = () => {
                             <img
                               src={event.image}
                               alt={`${event.category} ${event.title}`}
+                              loading="lazy"
+                              decoding="async"
                               className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${event.id === 1 ? 'object-[center_36%]' : ''}`}
                             />
                           </div>
@@ -140,6 +142,7 @@ const EventsList = () => {
                     <img
                       src={expandedEvent.image}
                       alt={`${expandedEvent.category} ${expandedEvent.title}`}
+                      decoding="async"
                       className={`w-full h-full object-cover ${expandedEvent.id === 1 ? 'object-[center_36%]' : ''}`}
                     />
                   </div>

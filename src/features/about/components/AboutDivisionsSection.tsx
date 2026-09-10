@@ -55,7 +55,14 @@ const AboutDivisionsSection: React.FC = () => {
     const scrollToTarget = () => {
       const el = document.getElementById(targetId);
       if (!el) return false;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Lenis controls scrolling, so drive it through the global instance if
+      // present; otherwise fall back to native scrollIntoView.
+      const lenis = window.__lenis;
+      if (lenis) {
+        lenis.scrollTo(el, { offset: -100, duration: 1.2 });
+      } else {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       return true;
     };
 
@@ -98,6 +105,8 @@ const AboutDivisionsSection: React.FC = () => {
                   <img
                     src={division.image}
                     alt={division.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full aspect-square md:aspect-[4/3] object-cover group-hover:scale-102 transition-transform duration-700 ease-out"
                   />
                   {/* Subtle purple-hued dark overlay */}
