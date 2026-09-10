@@ -1,4 +1,5 @@
-import cosmicBazaar2026Img from '@/events/cosmic_bazaar2026.jpg';
+import agm2026Img from '@/events/AGM2026.jpeg';
+import cosmicBazaar2026Img from '@/events/cosmic_bazaar2026.jpeg';
 import cosmicBazaar2025Img from '@/events/cosmic_bazzar2025.jpg';
 import prominence2025Img from '@/events/Prominence2025.png';
 
@@ -20,7 +21,7 @@ export const eventsData: Event[] = [
     title: 'Annual General Meeting',
     description:
       'The Annual General Meeting of SEDS SLIIT brings together members, leadership, and alumni to review achievements, present annual reports, and appoint the new executive committee for the upcoming term.',
-    image: '/neurorbit_banner.png',
+    image: agm2026Img,
     longDescription: [
       'The Annual General Meeting of SEDS SLIIT brings together members, leadership, and alumni to review achievements, present annual reports, and appoint the new executive committee for the upcoming term.',
     ],

@@ -13,7 +13,7 @@ const EventsList = () => {
     <section className="w-full py-32 px-6 md:px-20 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-left mb-12 max-w-4xl">
+        <div className="text-left mb-16 max-w-4xl">
           <div className="relative inline-block mb-6">
             {/* Dynamic CSS Title Glow */}
             <div
@@ -76,7 +76,7 @@ const EventsList = () => {
                             <img
                               src={event.image}
                               alt={`${event.category} ${event.title}`}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${event.id === 1 ? 'object-[center_36%]' : ''}`}
                             />
                           </div>
 
@@ -140,7 +140,7 @@ const EventsList = () => {
                     <img
                       src={expandedEvent.image}
                       alt={`${expandedEvent.category} ${expandedEvent.title}`}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${expandedEvent.id === 1 ? 'object-[center_36%]' : ''}`}
                     />
                   </div>
 
