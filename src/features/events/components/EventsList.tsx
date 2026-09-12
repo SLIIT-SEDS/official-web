@@ -13,7 +13,7 @@ const EventsList = () => {
     <section className="w-full py-32 px-6 md:px-20 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <div className="text-left mb-12 max-w-4xl">
+        <div className="text-left mb-16 max-w-4xl">
           <div className="relative inline-block mb-6">
             {/* Dynamic CSS Title Glow */}
             <div
@@ -73,13 +73,13 @@ const EventsList = () => {
                         >
                           {/* Image Wrapper */}
                           <div className="w-full aspect-[4/3] relative rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden mb-5 sm:mb-6 shrink-0">
-<img
-                    src={event.image}
-                    alt={`${event.category} ${event.title}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                            <img
+                              src={event.image}
+                              alt={`${event.category} ${event.title}`}
+                              loading="lazy"
+                              decoding="async"
+                              className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${event.id === 1 ? 'object-[center_36%]' : ''}`}
+                            />
                           </div>
 
                           {/* Info */}
@@ -139,12 +139,12 @@ const EventsList = () => {
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                   {/* Left Side: Large Image */}
                   <div className="w-full lg:w-[45%] aspect-[4/3] rounded-[1.2rem] sm:rounded-[1.8rem] overflow-hidden shrink-0 border border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-<img
-                    src={expandedEvent.image}
-                    alt={`${expandedEvent.category} ${expandedEvent.title}`}
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
+                    <img
+                      src={expandedEvent.image}
+                      alt={`${expandedEvent.category} ${expandedEvent.title}`}
+                      decoding="async"
+                      className={`w-full h-full object-cover ${expandedEvent.id === 1 ? 'object-[center_36%]' : ''}`}
+                    />
                   </div>
 
                   {/* Right Side: Details */}

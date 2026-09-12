@@ -5,9 +5,10 @@ interface MemberCardProps {
   name: string;
   role: string;
   image: string;
+  featured?: boolean;
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ name, role, image }) => {
+const MemberCard: React.FC<MemberCardProps> = ({ name, role, image, featured = false }) => {
   return (
     <div className="flex flex-col items-center gap-3 sm:gap-4 max-w-full">
       {/* 
@@ -31,7 +32,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ name, role, image }) => {
               alt={name}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover object-top ${role === 'Treasurer' ? 'scale-[2]' : role === 'Secretary' ? 'scale-[1.6]' : name === 'Nikini Bandara' ? 'scale-[1.7]' : 'scale-[1.8]'} origin-top ${featured ? '-translate-y-8' : role === 'Vice President' ? '-translate-y-1' : role === 'Editor' ? '-translate-y-6' : '-translate-y-4'} ${featured ? '-translate-x-1' : role === 'Secretary' ? '-translate-x-4' : role === 'Project Manager' || role === 'Division Manager' ? '-translate-x-2' : ''}`}
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
                   'https://ui-avatars.com/api/?name=' +
@@ -99,6 +100,7 @@ const BoardMembersSection: React.FC = () => {
                 name={featured.name}
                 role={featured.role}
                 image={featured.image}
+                featured
               />
             </div>
           )}
